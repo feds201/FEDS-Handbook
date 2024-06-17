@@ -1,0 +1,53 @@
+---
+title: Editing Paths and Autos
+---
+
+import { Callout } from 'nextra/components'
+import { Tabs } from 'nextra/components'
+
+# Pathplanner Download
+
+<Tabs items={['Microsoft', 'Mac']} defaultIndex="1">
+    <Tabs.Tab>**Microsoft** [PathPlanner Download: ](https://apps.microsoft.com/detail/9nqbkb5dw909?cid=storebadge&ocid=badge&rtc=1&activetab=pivot%3Aoverviewtab&hl=en-us&gl=US)</Tabs.Tab>
+    <Tabs.Tab>**Mac** [PathPlanner Download: ](https://apps.apple.com/us/app/frc-pathplanner/id1593046876)</Tabs.Tab>    
+</Tabs>
+
+## Paths
+
+![PathEditor](https://pathplanner.dev/images/path_editor.png)
+
+In PathPlanner, paths are used to create one continuous motion from some start point to an end point. In other words, each path describes a singular segment of an autonomous routine.
+
+### Examples
+
+* Driving from the start point to pick up a game piece
+* Driving from the game piece to a scoring position
+* Driving from the scoring position to an end position
+
+### Waypoints
+
+![Waypoint](https://pathplanner.dev/images/waypoints_tree.png)
+
+Within paths, waypoints are the positions on the field the define the shape of the spline that the robot will follow. Each waypoint consists of two types of points: anchor points and control points. Anchor points define the exact position that the spline will pass through, and control points are used to define the heading, or tangent, of the spline as well as to fine-tune the shape of the spline via the control point's distance from its associated anchor point.
+
+Waypoints can be added to a path by double-clicking on the field within the path preview. A new waypoint will be added to the end of the path at the clicked location. Waypoints can be edited by click and drag in the path preview, or via the waypoints tree.
+
+## Autos
+
+![PathEditor](https://pathplanner.dev/images/auto_editor.png)
+
+In PathPlanner, autos are used to define a complete autonomous routine. These can then be loaded as a full autonomous command in robot code via PathPlannerLib's auto builder functionality. Each autonomous routine is defined as a sequential command group populated with path following commands, named commands (same as the ones used in path event markers), wait commands, or nested command groups. Path following commands allow you to select any path in the project, this functions as a modular system allowing you to reuse the same path across multiple auto routines.
+
+<Callout type="info" emoji="ℹ️">
+  The paths chained together in an auto routine do not need to have their start/end positions aligned. PathPlannerLib path following commands will automatically handle transitioning between paths by default if their start/end positions do not align. However, it is your responsibility to ensure that any unaligned start/end positions or sharp angles where paths join will not cause any issues. Discontinuities shouldn't typically be a problem for holonomic drive trains unless you are transitioning between paths with a high velocity. You should avoid discontinuities with a differential drivetrain, unless paths are transitioning between a normal and a reversed path at 180 degrees.
+</Callout>
+
+## Command group
+
+![sequential group](https://pathplanner.dev/images/auto_editor.png)
+
+The command group tree is used to define the entire autonomous routine within a sequential command group. This command tree works the same as the command tree for event markers. Commands can be added, removed, or reordered. The same rules that apply to command groups when creating them programmatically still apply here.
+
+<Callout type="warning" emoji="⚠️">
+    You must hit enter after typing in new names to the named commands dropdown for the new name to be saved.
+</Callout>

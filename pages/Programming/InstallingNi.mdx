@@ -1,0 +1,102 @@
+---
+title: FRC Game Tools Installation
+---
+
+import { Callout } from 'nextra/components'
+
+## Installing the FRC Game Tools
+
+The FRC Game Tools contains the following software components:
+
+* LabVIEW Update
+* FRC Driver Station
+* FRC roboRIO Imaging Tool and Images
+
+The LabVIEW runtime components required for the Driver Station and Imaging Tool are included in this package.
+
+
+
+<Callout emoji="👾">
+    **Note:** No components from the LabVIEW Software for FRC package are required for running either the Driver Station or Imaging Tool.
+</Callout>
+
+## Requirements
+
+* Windows 10 or higher (Windows 10, 11)
+* Download the FRC Game Tools from National Instruments (NI).
+
+![The Download button for the NI installer with the offline installer link below it.](https://docs.wpilib.org/en/latest/_images/offline-installer.webp)
+** **
+**Important:** LabVIEW teams have already completed this step. Skip to the "Installation" section.
+
+## Uninstall Old Versions (Recommended)
+
+It is recommended to remove any old versions of the FRC Game Tools before installing the new version. Then:
+
+1. Open the Start menu.
+2. Search for "Add or Remove Programs".
+3. Locate the entry labeled "NI Software" and select "Uninstall".
+
+**Note:** It is only necessary to uninstall previous versions when installing a new year's tools.
+
+## Select Components to Uninstall
+
+In the dialog box, select all entries to uninstall. Click "Remove" and wait for the uninstaller to complete. Reboot if prompted.
+
+## Installation
+
+**Important:** The Game Tools installer may prompt that .NET Framework 4.6.2 needs to be updated or installed. Follow the on-screen instructions.
+
+## Extraction
+
+There are two options for extraction:
+
+**Online**
+
+1. Run the downloaded executable file.
+2. Click "Yes" if a Windows Security prompt appears.
+
+**Offline (Windows 10+)**
+
+1. Right-click on the downloaded ISO file and select "Mount".
+2. Run `install.exe` from the mounted ISO.
+3. Click "Yes" if a Windows Security prompt appears.
+
+**Note:** If you cannot mount the ISO file, install 7-Zip and use that to extract the ISO.
+
+## NI Package Manager License
+
+Click "Next" to confirm you agree to the NI Package Manager License agreement.
+
+## Disable Windows Fast Startup
+
+It is recommended to leave this screen as-is and click "Next". Disabling Windows Fast Startup can cause issues with imaging the roboRIO.
+
+## NI Package Manager Review
+
+Click "Next" if you see a screen showing what is about to be installed.
+
+## NI Package Manager Installation
+
+This window will track the installation progress of the NI Package Manager.
+
+## Additional Software
+
+Leave all of the additional packages selected and click "Next".
+
+## License Agreements
+
+1. Select "I accept..."
+2. Click "Next".
+
+## Review Summary
+
+Click "Next".
+
+## Detail Progress
+
+Click "Next" when the installation process is finished.
+
+## Reboot to Complete Installation
+
+If prompted, select "Reboot Now" after closing any open programs.

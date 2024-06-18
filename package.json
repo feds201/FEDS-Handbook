@@ -1,15 +1,33 @@
 {
   "dependencies": {
+    "@babel/standalone": "^7.24.7",
+    "@codemirror/lang-javascript": "^6.2.2",
+    "@liveblocks/client": "^2.0.3",
+    "@liveblocks/react": "^2.0.3",
+    "@liveblocks/yjs": "^2.0.3",
+    "@monaco-editor/react": "^4.6.0",
+    "codemirror": "^6.0.1",
+    "monaco-editor": "^0.49.0",
     "next": "^14.2.4",
     "nextra": "^2.13.4",
     "nextra-theme-docs": "^2.13.4",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-icons": "^5.2.1"
+    "react-icons": "^5.2.1",
+    "react-modal": "^3.16.1",
+    "react-select": "^5.8.0",
+    "y-codemirror.next": "^0.3.4",
+    "y-monaco": "^0.1.5",
+    "y-protocols": "^1.0.6",
+    "yjs": "^13.6.17"
   },
   "scripts": {
     "dev": "next",
     "build": "next build",
     "start": "next start"
+  },
+  "devDependencies": {
+    "@types/node": "20.14.4",
+    "typescript": "5.4.5"
   }
 }

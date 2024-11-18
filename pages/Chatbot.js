@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, {useEffect, useState} from "react";
 import styled from "styled-components";
-import { createClient } from "@supabase/supabase-js";
-import { MDXProvider } from "@mdx-js/react";
-import stringSimilarity from "string-similarity";
+import {createClient} from "@supabase/supabase-js";
+import {MDXProvider} from "@mdx-js/react";
+import {GoogleGenerativeAI} from "@google/generative-ai";
 
 // Initialize Supabase client
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
@@ -17,6 +17,8 @@ const Chatbot = () => {
     const [newAnswer, setNewAnswer] = useState("");
     const [newKeywords, setNewKeywords] = useState(""); // To store new keywords
     const [isAgreed, setIsAgreed] = useState(false);
+    const genAI = new GoogleGenerativeAI(process.env.NEXT_PUBLIC_GEMINI_API_KEY);
+    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
     // Fetch all FAQs from Supabase when the component mounts
     useEffect(() => {
@@ -37,47 +39,25 @@ const Chatbot = () => {
     }, []);
 
     // Function to handle user query
-    const handleSendMessage = () => {
+    const handleSendMessage = async () => {
         if (query.trim() === "") return;
 
         // Add user message to the chat
         setMessages((prevMessages) => [...prevMessages, { sender: "user", text: query }]);
 
-        // Extract keywords from the query
-        const queryKeywords = query.toLowerCase().split(" ").map(word => word.trim());
+        try {
+            const result = await model.generateContent(query+" You are Falcon-Bot, created my Ritesh using Google AI, You are here to help FEDS201 students with their programming Question on FRC queries.(Do not worry about this sentence, just focus on the forst part");
 
-        // Search for similar questions locally using string-similarity and keyword matching
-        const questions = faqs.map(faq => faq.question);
-        const bestMatch = stringSimilarity.findBestMatch(query, questions).bestMatch;
-
-        let bestFaq = null;
-        if (bestMatch.rating > 0.5) { // You can adjust the threshold as needed
-            bestFaq = faqs.find(faq => faq.question === bestMatch.target);
+            setMessages((prevMessages) => [...prevMessages, { sender: "bot", text: result.response.text() }]);
+        } catch (error) {
+            console.error("Error generating response:", error);
+            setMessages((prevMessages) => [...prevMessages, {
+                sender: "bot",
+                text: "I encountered an error processing your request. Please try again."
+            }]);
+        } finally {
+            setQuery(""); // Clear the input box
         }
-
-        if (bestFaq) {
-            // Check keyword matching
-            const faqKeywords = bestFaq.keywords.map(keyword => keyword.toLowerCase());
-            const commonKeywords = queryKeywords.filter(keyword => faqKeywords.includes(keyword));
-            if (commonKeywords.length > 0) {
-                setMessages((prevMessages) => [
-                    ...prevMessages,
-                    { sender: "bot", text: bestFaq.answer },
-                ]);
-            } else {
-                setMessages((prevMessages) => [
-                    ...prevMessages,
-                    { sender: "bot", text: "I don't have an answer for that right now." },
-                ]);
-            }
-        } else {
-            setMessages((prevMessages) => [
-                ...prevMessages,
-                { sender: "bot", text: "I don't have an answer for that right now." },
-            ]);
-        }
-
-        setQuery(""); // Clear the input box
     };
 
     // Handle submission of new question, answer, and keywords
@@ -192,6 +172,7 @@ const LeftPane = styled.div`
     align-items: center;
     background-color: #f5f5f5;
     padding: 10px;
+    width: 50vw; /* Occupy half of the screen width */
 `;
 
 const RightPane = styled.div`
@@ -201,19 +182,18 @@ const RightPane = styled.div`
     align-items: center;
     background-color: #fff;
     padding: 10px;
+    width: 50vw; /* Occupy half of the screen width */
 `;
 
 const ChatWindow = styled.div`
-    width: 100%;
-    max-width: 400px;
-    max-height: 400px;
+
+ 
     background: #fff;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    margin-bottom: 20px;
 
     @media (max-width: 600px) {
         max-width: 100%;

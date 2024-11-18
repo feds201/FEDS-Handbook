@@ -2,6 +2,7 @@
   "dependencies": {
     "@babel/standalone": "^7.24.7",
     "@codemirror/lang-javascript": "^6.2.2",
+    "@google/generative-ai": "^0.21.0",
     "@liveblocks/client": "^2.0.3",
     "@liveblocks/react": "^2.0.3",
     "@liveblocks/yjs": "^2.0.3",

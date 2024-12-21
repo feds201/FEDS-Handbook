@@ -19,32 +19,49 @@ Arms commonly use Motors and encoders to rotate and keep track of rotation when 
 ```java
 public class Arm extends SubsystemBase {
 
+    public static TalonFXConfiguration GetArmMotorConfiguration() {
+      TalonFXConfiguration configs = new TalonFXConfiguration();
+
+      MotorOutputConfigs motorOutputConfigs = configs.MotorOutput;
+      motorOutputConfigs.NeutralMode = NeutralModeValue.Brake; //When output of the motor is neutral or disabled, Put the motor in brake mode.
+      
+      return configs;
+   }
+
+    public static PIDController GetArmPID() {
+         PIDController pid = new PIDController(0.195, 0.015, 0);
+         pid.setTolerance(1); //Error that is considered Tolerable as the setpoint
+         pid.setIZone(Double.POSITIVE_INFINITY); //Disables Izone because value is infinity
+         pid.setIntegratorRange(-0.05, 0.05); //Limits I term to a minimum of -0.05 and maximum of 0.05
+         return pid;
+      }
+
   private final TalonFX armRotation; 
   private final DutyCycleEncoder armRotationEncoder;
 
-  private final PIDController pid = ArmConstants.ArmPIDForExternalEncoder.GetArmPID();
+  private final PIDController pid = GetArmPID();
 
    public Arm() {
-    super();
     
     armRotation = new TalonFX(CANConstants.Arm.kArm);
-    armRotation.getConfigurator().apply(ArmConstants.GetArmMotorConfiguration());
+    armRotation.getConfigurator().apply(GetArmMotorConfiguration());
     armRotationEncoder = new DutyCycleEncoder(DIOConstants.Arm.kArmRotateEncoder);
    }
+}
 ```
 
 
-* This code creates an <u>Arm Motor</u>, <u>Arm Encoder</u>, and <u>PID Controller</u>.
+* This code creates an <u>TalonFX motor</u>, <u>Duty Cycle Encoder</u>, and <u>PID Controller</u>, All of which are used to control an arm.
 
-* The TalonFX motor and DutyCycleEncoder both use ID's to differentiate themselves from other encoders / motors on a robot. In this case, the IDs are stored in seperate constants files.
+* The TalonFX motor and DutyCycleEncoder both use ID's to differentiate themselves from other encoders / motors on a robot. In this case, the IDs are stored in seperate constants files for organization.
 
-<Callout type={"info"} emoji={"💡"}> Learn more about PID control in the PID section. </Callout> 
+<Callout type={"info"} emoji={"💡"} href = {"../Subsystems/PID"}> Learn more about PID control in the PID section. </Callout> 
 
-/* (TODO create PID page) */
+{/*(TODO create PID page)*/}  
 
 
 ### Setting Arm Limits 
-Arms usually have a limited range of motion when they are a part of a robot. However, the motor does not know this by default, and moving the arm further than its range would definitely break the robot or the arm. This can be combatted by setting an <u>Arm rotation limit</u>.
+Arms usually have a limited range of motion when they are a part of a robot. However, the motor does not know this by default, and moving the arm further than its range would almost definitely break the robot or the arm. This can be combatted by setting an <u>Arm rotation limit</u>.
 ### Example code 
 ```java
  public void rotateOrHold(double power) {
@@ -72,8 +89,8 @@ Arms usually have a limited range of motion when they are a part of a robot. How
     }
 ```
 
-* The passed in ```Double Angle``` is set as the Arm hold angle and is then set as the PID target for the arm.
-<Callout type={"info"} emoji={"💡"}> Look at all of the arm code from 201's 2024 robot [Here](https://github.com/feds201/2024stewie/blob/development-experimental/src/main/java/frc/robot/subsystems/arm/Arm.java) </Callout>
+* The parameter ```double Angle``` is set as the Arm hold angle and is then set as the PID target for the arm.
+<Callout type={"info"} emoji={"💡"}> Look at all of the arm code from 201's 2024 robot [here](https://github.com/feds201/2024stewie/blob/development-experimental/src/main/java/frc/robot/subsystems/arm/Arm.java). </Callout>
 
 ## Arm Commands 
 
@@ -106,6 +123,7 @@ public class RotateArmToPosition extends Command {
   ```
   * This code creates a command class for ```RotateArmToPosition``` and uses the ```arm``` subsystem.
   * It also uses a failsafe technique to prevent the arm from breaking. The code uses -20 as the threshold for ```desiredAngle``` before ```c_failure``` returns true. As long as the ```desiredAngle``` stays below -20, the command continues as normal.
+  <Callout emoji={"❗"} type={"error"}>Failsafes and limits are based on encoder values, which are uniqe to each robot. Make sure to tune these values to each unique robot!</Callout>
   * The ```addRequirements(c_arm)``` function requires the arm subsystem to end all other commands using it. This can help prevent breaking of the robot because it does not allow two commands to try to use the same subsystem.
   <Callout emoji={"👀"} type={"info"}> Note that ```c_angle``` is set to be equal to ```desiredAngle```. </Callout>
 
@@ -166,10 +184,12 @@ When a new Command class is created, you will see ```initialize```, ```excecute`
     }
 ```
 <Callout type={"warning"} emoji={"🔔"}> In This example, ```RotateArmToPosition``` Command uses all of the functions to complete its' purpose, but not all commands will have to. </Callout>
+
 * In ```initialize```, the arm's PID target is set to ```c_angle```.
 * The ```excecute``` function checks if faliure mode is true. If it is false, the ```rotateArmToTarget``` function is run which uses the arm PID to move it to the previously stated setpoint. If true, ```c_arm.setFailure``` is set to true.
 * The ```end``` function sets the power of ```rotateOrHold``` to 0, keeping the arm at its setpoint. This is the same function that was detailed further up on this page. 
 * Finally, the ```isFinished``` function ends the command either when faliure mode is true or when the arm reaches its' target.
+<Callout type={"info"} emoji={"🤔"}> Notice the use of ```c_failure``` as seen in the ```rotateOrHold()``` method, used to end the command. </Callout>
 
 #### Mapping commands to an Xbox controller
 
@@ -218,6 +238,8 @@ Now, our example arm code is all done. We created an <u>arm subsystem</u> to cre
 
 
 
-* The passed in `Angle` is set as the Arm hold angle and is then set as the PID target for the arm.
+
 
 <Callout type={"info"} emoji={"💡"}> Look at all of the arm code from 201's 2024 robot [Here](https://github.com/feds201/2024stewie/blob/development-experimental/src/main/java/frc/robot/subsystems/arm/Arm.java) </Callout>
+
+

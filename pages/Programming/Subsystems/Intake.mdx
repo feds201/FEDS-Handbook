@@ -127,7 +127,7 @@ public class Wrist extends SubsystemBase {
 
 ### Imports:
 - **`com.revrobotics.CANSparkMax`**: A class from the REV Robotics library that provides control over a brushless motor.
-- **`edu.wpi.first.math.controller.PIDController`**: A class used to implement a PID (Proportional, Integral, Derivative) control loop, which helps the robot move the wrist to a desired position smoothly and accurately.
+- **`edu.wpi.first.math.controller.PIDController`**: Implements a PID controller
 - **`edu.wpi.first.wpilibj.DutyCycleEncoder`**: A class that reads the position of an encoder. In this case, it's used to monitor the wrist's angle of rotation.
 - **`frc.robot.constants.CANConstants`, `DIOConstants`, `IntakeConstants`**: These constants hold values for motor IDs, encoder ports, and PID controller settings (defined elsewhere in the code).
 
@@ -135,7 +135,8 @@ public class Wrist extends SubsystemBase {
 ```java
 public class Wrist extends SubsystemBase {
 ```
-- The `Wrist` class extends `SubsystemBase`, meaning it is part of the robot's subsystem structure. A subsystem is a component of the robot (such as the intake, arm, or wheels) that is responsible for a specific function.
+- The `Wrist` class extends `SubsystemBase`, meaning it is part of the robot's subsystem structure. A subsystem is a component of the robot (such as the intake, arm, or wheels) that 
+is responsible for a specific function.
 
 ### Instance Variables:
 ```java
@@ -147,7 +148,7 @@ private static double rawEncoderValue;
 ```
 - **`wristRotation`**: A `CANSparkMax` object that controls the wrist motor using a brushless motor. This is the motor that rotates the wrist.
 - **`wristRotationEncoder`**: A `DutyCycleEncoder` that reads the wrist's rotational position to track the angle of the wrist.
-- **`pid`**: A `PIDController` used to control the wrist's rotation. It helps adjust the motor's power to reach and maintain a specific target angle.
+- **`pid`**: A `PIDController` used to control the wrist's rotation.
 - **`encoderAngle`**: A static variable to store the wrist's angle (calculated from the encoder's value).
 - **`rawEncoderValue`**: A static variable to store the raw value from the encoder, which will be used to calculate the angle.
 
@@ -175,9 +176,10 @@ public void periodic() {
   writePeriodicOutputs();
 }
 ```
-- **`periodic()`**: This method is called periodically by the robot framework (typically every 20 milliseconds).
-  - **`wristRotationEncoder.setPositionOffset(0)`**: Resets the encoder position offset to zero during every periodic call, potentially preventing encoder drift.
-  - **`if (!wristRotationEncoder.isConnected())`**: Checks if the encoder is connected. If not, it sets the wrist motor voltage to 0 to avoid erratic behavior due to a disconnected encoder.
+- **`periodic()`**: This method is called periodically by the robot framework (every 20 milliseconds).
+  - **`wristRotationEncoder.setPositionOffset(0)`**: Resets the encoder position offset to zero during every periodic call.
+  - **`if (!wristRotationEncoder.isConnected())`**: Checks if the encoder is connected. If not, it sets the wrist motor voltage to 0 to avoid erratic behavior due to a disconnected 
+  encoder.
 
 ### `writePeriodicOutputs()` Method:
 ```java
@@ -195,7 +197,8 @@ public void readWristEncoder(){
 }
 ```
 - **`readWristEncoder()`**: This method reads the raw encoder value from `wristRotationEncoder` and calculates the wrist's angle.
-  - **`rawEncoderValue = wristRotationEncoder.get()`**: Gets the raw encoder value (Where 360 degrees of movement is equal to 1), representing the position of the wrist in its rotation.
+  - **`rawEncoderValue = wristRotationEncoder.get()`**: Gets the raw encoder value (Where 360 degrees of movement is equal to 1), representing the position of the wrist in its 
+  rotation.
   - **`encoderAngle = rawEncoderValue * 360`**: Converts the raw encoder value to an angle in degrees (since the encoder value represents a full 360° rotation).
 
 ### Getters:
@@ -315,6 +318,8 @@ public class RotateWristToPosition extends Command {
 - **`addRequirements(c_intake)`**: Registers the `Wrist` subsystem as a requirement, ensuring no other command can control the wrist simultaneously.
 - **Failure Condition**: If the `target` is less than `-20`, it sets the `c_failure` flag to `true`. This condition could represent an out-of-range or invalid position.
 - **`SmartDashboard.putBoolean("WRIST FAILURE", c_failure)`**: Displays the failure condition on the SmartDashboard for real-time monitoring.
+
+<Callout type={"warning"} emoji={"⚠️"}>Note that these failure thresholds are for the example only. Failure thresholds are unique to every robot.</Callout>
 
 #### `initialize()` Method:
 - **`c_intake.setPIDTarget(c_target)`**: Sets the target position for the wrist in the PID controller.

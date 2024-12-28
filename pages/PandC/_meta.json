@@ -1,4 +1,10 @@
 {
-    "Tools&Setup": "Tools & Setup"
-  }
+
+  "Index" : "General",
+  "Robotics" : "Robotics",
+  "Family" : "Family",
+  "KeyDays" : "Key Days",
+  "Outreach" : "Outreach",
+  "Sponsorship" : "Sponsorship"
+}
   

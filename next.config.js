@@ -1,9 +1,12 @@
-const withNextra = require('nextra')({
-    theme: 'nextra-theme-docs',
-    themeConfig: './theme.config.jsx'
-})
+// Use dynamic import for ES module
+async function loadNextra() {
+    const nextra = await import('nextra');
+    return nextra.default({
+        theme: 'nextra-theme-docs',
+        themeConfig: './theme.config.jsx'
+    });
+}
 
-module.exports = withNextra()
+const withNextra = loadNextra();
 
-// If you have other Next.js configurations, you can pass them as the parameter:
-// module.exports = withNextra({ /* other next.js config */ })
+export default withNextra;

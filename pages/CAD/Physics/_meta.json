@@ -1,8 +1,7 @@
 {
-  "Index": "Introduction",
-  "Kinematics": "Kinematics",
-  "Static&DynamicForces": "Static & Dynamic Forces",
-  "Energy": "Energy",
-  "RotationalKinematics": "Rotational Kinematics",
-  "Applications": "Applications of Physics"
+  "Useful+Resources": "Useful Resources",
+  "Motor": "Selecting a Motor",
+  "GearRatios": "Gear Ratios",
+  "Collision": "Inspire Stress Analysis",
+  "DynamicAnalysis": "Inspire Motion Analysis"
 }

@@ -2,6 +2,7 @@ import React from 'react';
 import Chatbot from './pages/Chatbot';
 import { useConfig } from "nextra-theme-docs";
 import { useRouter } from "next/router";
+import { title } from 'process';
 
 export default {
     head() {
@@ -22,7 +23,11 @@ export default {
                 <meta
                     property="og:description"
                     content={frontMatter.description || 'FEDS201'}
+
                 />
+
+                <meta name="titleSuffix" content="FEDS201" />
+                <meta name="description" content="FEDS201" />
                 <link rel="icon" href="https://i.imgur.com/GmdZ72B.png" />
             </>
         );
@@ -49,8 +54,10 @@ export default {
     },
 
     chat: {
-        link: '/Chatbot',
+        link: 'https://feds-handbook.vercel.app/Chatbot',
     },
+
+
 
     footer: {
         text: (

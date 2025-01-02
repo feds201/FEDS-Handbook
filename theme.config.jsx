@@ -26,8 +26,17 @@ export default {
                 <meta name="msapplication-TileColor" content="#ffffff" />
                 <meta name="theme-color" content="#ffffff" />
                 <meta name="google-site-verification" content="0LNTJPoseM_CflO4_VtHt5-HsjPSnKEunUGr7-APSZI" />            
+                
+            
+                <script async src="https://www.googletagmanager.com/gtag/js?id=G-N3TT9XBHV0"></script>
+                <script>
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments);}
+                  gtag('js', new Date());
+                
+                  gtag('config', 'G-N3TT9XBHV0');
+                </script>
                 </>
-
         );
     },
 

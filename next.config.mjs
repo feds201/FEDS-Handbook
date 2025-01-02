@@ -12,4 +12,4 @@ const nextConfig = {
   },
 };
 
-export default withNextra(nextConfig);
+export default withNextra();

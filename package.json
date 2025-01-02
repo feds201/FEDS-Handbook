@@ -32,11 +32,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "export": "next build && node createNoJekyll.js",
-    "lint": "next lint --max-warnings=0",
-    "type-check": "tsc",
-    "deploy": "npm run export && gh-pages -d out -t true"
+    "start": "next start"
   },
   "devDependencies": {
     "@types/node": "20.14.4",

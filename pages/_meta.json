@@ -3,10 +3,20 @@
   "Programming": "Programming",
   "CAD": "CAD",
   "Electrical": "Electrical",
-  "Business": "Business",
+  "PandC": "People and Culture",
   "Mechanical": "Mechanical",
-  "OutReach": "Outreach",
   "Strategy": "Strategy/ Scouting",
   "Experiences": "Experiences",
-  "Contribution": "Contribution"
+  "---": {
+    "type": "separator"
+  },
+  "Contribution": "Contribution",
+  "FEDSHandbook": "FEDS Handbook",
+
+  "contact": {
+    "title": "Contact Us",
+    "type": "page",
+    "href": "https://feds201.com",
+    "newWindow": true
+  }
 }

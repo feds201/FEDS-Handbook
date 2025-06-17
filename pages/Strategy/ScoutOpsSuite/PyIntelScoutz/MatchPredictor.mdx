@@ -1,0 +1,154 @@
+---
+title: Match Predictor
+---
+
+# Match Predictor
+
+This document explains the working of the Match Predictor tool, which uses advanced analytics and machine learning to predict match outcomes and provide strategic insights.
+
+## Overview
+
+The Match Predictor tool analyzes scouting data to predict match outcomes and evaluate team performance. It combines traditional statistical analysis with machine learning to provide accurate predictions and insights.
+
+## Core Features
+
+### 1. Data Collection and Management
+- Supports CSV and JSON data formats
+- QR code scanner integration for rapid data collection
+- Data merging and format conversion capabilities
+- Automatic backup system for data safety
+
+### 2. Basic Score Calculations
+
+The total score $S_{total}$ for a team is calculated as:
+
+```math
+S_{total} = S_{auton} + S_{teleop} + S_{endgame} + S_{defense}
+```
+
+#### Autonomous Score
+The autonomous score $S_{auton}$ is calculated as:
+
+```math
+S_{auton} = \sum_{i=1}^{4} (Level_i \times Count_i) + 3 \cdot Processor + 2 \cdot Barge + 5 \cdot LeftBarge
+```
+
+#### Teleop Score
+The teleop score $S_{teleop}$ is calculated as:
+
+```math
+S_{teleop} = \sum_{i=1}^{4} (Level_i \times Count_i) + 3 \cdot Processor + 2 \cdot Barge
+```
+
+#### Endgame Score
+The endgame score $S_{endgame}$ is calculated as:
+
+```math
+S_{endgame} = 15 \cdot DeepClimb + 10 \cdot ShallowClimb + 5 \cdot Park
+```
+
+#### Defense Value
+The defense value $S_{defense}$ is a binary score:
+
+```math
+S_{defense} = \begin{cases} 
+5 & \text{if defense is played} \\
+0 & \text{otherwise}
+\end{cases}
+```
+
+### 3. Machine Learning Prediction
+
+The tool uses an XGBoost model for advanced match prediction, considering:
+- Historical team performance
+- Feature importance analysis
+- Cross-validation for accuracy
+- Probability-based predictions
+
+#### Model Features
+- `auton_total`: Autonomous performance
+- `teleop_total`: Teleoperated performance
+- `endgame_total`: Endgame performance
+- `defense_value`: Defense capability
+
+The model provides win probabilities for each alliance based on these metrics.
+
+### 4. Team Analysis
+
+#### Performance Metrics
+- Match count and consistency rating
+- Average scores by phase (autonomous, teleop, endgame)
+- Climbing success percentage
+- Defense participation rate
+
+#### External Data Integration
+- Statbotics API integration for historical statistics
+- The Blue Alliance API for team information
+- Win/loss records and EPA (Estimated Prediction Accuracy)
+
+### 5. Alliance Selection Tools
+
+The tool provides several alliance selection features:
+- Best teams by category (autonomous, teleop, endgame)
+- Team compatibility analysis
+- Versatility rankings
+- Defense capability assessment
+
+### 6. Data Visualization
+
+The tool generates various visualizations:
+- Team performance breakdowns
+- Consistency ratings
+- Alliance comparisons
+- Historical trend analysis
+
+Example visualization:
+{/* ![Team Performance Breakdown](team_performance_breakdown.png) */}
+
+### 7. Advanced Features
+
+#### Sentiment Analysis
+- Analyzes scout comments using natural language processing
+- Classifies feedback as positive or negative
+- Provides sentiment-based team insights
+
+#### Team Filtering
+- Custom filtering criteria
+- Match count thresholds
+- Score-based filtering
+- Defense capability filtering
+
+#### Team Search
+- Multi-criteria search capabilities
+- Performance-based filtering
+- Match history analysis
+- Detailed team profiles
+
+## Usage Examples
+
+### Basic Match Prediction
+```text
+Red Alliance: Teams 1234, 5678, 9012
+Blue Alliance: Teams 2345, 6789, 0123
+
+Prediction Results:
+- Red Alliance: 75% win probability
+- Blue Alliance: 25% win probability
+```
+
+### Alliance Selection
+```text
+Top Autonomous Teams:
+1. Team A (avg: 15 pts)
+2. Team B (avg: 14 pts)
+3. Team C (avg: 13 pts)
+
+Best Overall Performance:
+1. Team X (consistency: 0.95)
+2. Team Y (consistency: 0.92)
+3. Team Z (consistency: 0.90)
+```
+
+## Conclusion
+
+The Match Predictor combines traditional scouting metrics with advanced analytics and machine learning to provide comprehensive team analysis and match predictions. By analyzing multiple aspects of team performance and using both historical and current data, it helps teams make informed strategic decisions during competitions.

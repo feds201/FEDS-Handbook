@@ -1259,11 +1259,7 @@ export const TeamStructureGrid = () => {
           fontSize: 'clamp(32px, 5vw, 48px)',
           fontWeight: '800',
           marginBottom: '20px',
-          background: isDark 
-            ? 'linear-gradient(135deg, #a78bfa 0%, #06b6d4 50%, #10b981 100%)'
-            : 'linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%)',
-          WebkitBackgroundClip: 'text',
-          WebkitTextFillColor: 'transparent'
+          color: isDark ? '#f1f5f9' : '#1e293b'
         }}>
           Championship Team Structure
         </h2>
@@ -1515,7 +1511,7 @@ if (target != null) {
               fontWeight: '700',
               cursor: 'pointer',
               transition: 'all 0.3s ease',
-              boxShadow: '0 8px 16px rgba(102, 126, 234, 0.4)'
+              boxShadow: '0 8px 32px rgba(102, 126, 234, 0.4)'
             }}>
               🚀 Start Learning
             </button>
@@ -1585,11 +1581,13 @@ if (target != null) {
           
           <pre style={{
             color: 'white',
-            fontSize: '14px',
-            lineHeight: '1.6',
+            fontSize: '13px',
+            lineHeight: '1.5',
             margin: 0,
             whiteSpace: 'pre-wrap',
-            transition: 'all 0.5s ease'
+            transition: 'all 0.5s ease',
+            maxHeight: '300px',
+            overflow: 'auto'
           }}>
             <code>
               {codeExamples[codeExample].code}
@@ -1624,7 +1622,7 @@ if (target != null) {
   );
 };
 
-export const ProgrammingStats = () => {
+export const SoftwareStats = () => {
   const { theme } = useTheme();
   const [mounted, setMounted] = useState(false);
   
@@ -1637,10 +1635,10 @@ export const ProgrammingStats = () => {
   const isDark = theme === 'dark';
   
   const stats = [
-    { value: '50ms', label: 'Loop Cycle Time', icon: '⚡', description: 'Critical real-time performance' },
-    { value: '15fps', label: 'Vision Processing', icon: '👁️', description: 'Real-time target tracking' },
-    { value: '120lbs', label: 'Robot Weight', icon: '🤖', description: 'Your code controls this mass' },
-    { value: '2.5min', label: 'Match Duration', icon: '⏱️', description: 'Every second counts' }
+    { value: '95%', label: 'Prediction Accuracy', icon: '🎯', description: 'AI match prediction success rate' },
+    { value: '10M+', label: 'Data Points', icon: '📊', description: 'Competition data processed annually' },
+    { value: '500ms', label: 'API Response', icon: '⚡', description: 'Average database query time' },
+    { value: '24/7', label: 'Uptime', icon: '☁️', description: 'Cloud infrastructure availability' }
   ];
   
   return (
@@ -1655,7 +1653,7 @@ export const ProgrammingStats = () => {
         ? '1px solid rgba(255, 255, 255, 0.1)'
         : '1px solid rgba(0, 0, 0, 0.05)',
       boxShadow: isDark 
-        ? '0 20px 40px -12px rgba(0, 0, 0, 0.8)'
+        ? '0 20px 40px -12px rgba(255, 255, 255, 0.1)'
         : '0 20px 40px -12px rgba(0, 0, 0, 0.1)'
     }}>
       <div style={{
@@ -1668,13 +1666,13 @@ export const ProgrammingStats = () => {
           marginBottom: '16px',
           color: isDark ? '#f1f5f9' : '#1e293b'
         }}>
-          Programming by the Numbers
+          Software by the Numbers
         </h2>
         <p style={{
           color: isDark ? '#94a3b8' : '#64748b',
           fontSize: '18px'
         }}>
-          Understanding the technical constraints and performance requirements
+          Understanding the scale and performance of our digital systems
         </p>
       </div>
       
@@ -1708,7 +1706,7 @@ export const ProgrammingStats = () => {
               fontSize: 'clamp(24px, 4vw, 36px)',
               fontWeight: '800',
               marginBottom: '8px',
-              background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+              background: 'linear-gradient(135deg, #f093fb 0%, #4facfe 100%)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent'
             }}>
@@ -1735,7 +1733,126 @@ export const ProgrammingStats = () => {
   );
 };
 
-export const SkillsMatrix = () => {
+export const SoftwareTechStack = () => {
+  const { theme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+  
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) return null;
+  
+  const isDark = theme === 'dark';
+  
+  return (
+    <div style={{
+      background: 'linear-gradient(145deg, rgba(240, 147, 251, 0.1), rgba(79, 172, 254, 0.1))',
+      borderRadius: '20px',
+      padding: '32px',
+      margin: '40px 0',
+      border: '1px solid rgba(240, 147, 251, 0.2)'
+    }}>
+      <div style={{
+        display: 'grid',
+        gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+        gap: '32px'
+      }}>
+        <div>
+          <div style={{
+            color: '#f093fb',
+            display: 'block',
+            marginBottom: '16px',
+            fontSize: '18px',
+            fontWeight: '700'
+          }}>
+            Frontend & Mobile:
+          </div>
+          <ul style={{ margin: 0, paddingLeft: '0', listStyle: 'none' }}>
+            <li style={{ margin: '8px 0', paddingLeft: '20px', position: 'relative' }}>
+              <span style={{ position: 'absolute', left: '0', color: '#f093fb' }}>▶</span>
+              <strong>React/Next.js</strong>: Modern web applications
+            </li>
+            <li style={{ margin: '8px 0', paddingLeft: '20px', position: 'relative' }}>
+              <span style={{ position: 'absolute', left: '0', color: '#f093fb' }}>▶</span>
+              <strong>Flutter/Dart</strong>: Cross-platform mobile apps
+            </li>
+            <li style={{ margin: '8px 0', paddingLeft: '20px', position: 'relative' }}>
+              <span style={{ position: 'absolute', left: '0', color: '#f093fb' }}>▶</span>
+              <strong>TypeScript</strong>: Type-safe JavaScript development
+            </li>
+            <li style={{ margin: '8px 0', paddingLeft: '20px', position: 'relative' }}>
+              <span style={{ position: 'absolute', left: '0', color: '#f093fb' }}>▶</span>
+              <strong>Tailwind CSS</strong>: Utility-first styling
+            </li>
+          </ul>
+        </div>
+        
+        <div>
+          <div style={{
+            color: '#f093fb',
+            display: 'block',
+            marginBottom: '16px',
+            fontSize: '18px',
+            fontWeight: '700'
+          }}>
+            Backend & Data:
+          </div>
+          <ul style={{ margin: 0, paddingLeft: '0', listStyle: 'none' }}>
+            <li style={{ margin: '8px 0', paddingLeft: '20px', position: 'relative' }}>
+              <span style={{ position: 'absolute', left: '0', color: '#f093fb' }}>▶</span>
+              <strong>Python</strong>: Data science and machine learning
+            </li>
+            <li style={{ margin: '8px 0', paddingLeft: '20px', position: 'relative' }}>
+              <span style={{ position: 'absolute', left: '0', color: '#f093fb' }}>▶</span>
+              <strong>Firebase/Supabase</strong>: Real-time databases
+            </li>
+            <li style={{ margin: '8px 0', paddingLeft: '20px', position: 'relative' }}>
+              <span style={{ position: 'absolute', left: '0', color: '#f093fb' }}>▶</span>
+              <strong>Node.js</strong>: Server-side JavaScript
+            </li>
+            <li style={{ margin: '8px 0', paddingLeft: '20px', position: 'relative' }}>
+              <span style={{ position: 'absolute', left: '0', color: '#f093fb' }}>▶</span>
+              <strong>PostgreSQL</strong>: Relational database systems
+            </li>
+          </ul>
+        </div>
+        
+        <div>
+          <div style={{
+            color: '#f093fb',
+            display: 'block',
+            marginBottom: '16px',
+            fontSize: '18px',
+            fontWeight: '700'
+          }}>
+            AI & Analytics:
+          </div>
+          <ul style={{ margin: 0, paddingLeft: '0', listStyle: 'none' }}>
+            <li style={{ margin: '8px 0', paddingLeft: '20px', position: 'relative' }}>
+              <span style={{ position: 'absolute', left: '0', color: '#f093fb' }}>▶</span>
+              <strong>scikit-learn</strong>: Machine learning algorithms
+            </li>
+            <li style={{ margin: '8px 0', paddingLeft: '20px', position: 'relative' }}>
+              <span style={{ position: 'absolute', left: '0', color: '#f093fb' }}>▶</span>
+              <strong>pandas/numpy</strong>: Data analysis and processing
+            </li>
+            <li style={{ margin: '8px 0', paddingLeft: '20px', position: 'relative' }}>
+              <span style={{ position: 'absolute', left: '0', color: '#f093fb' }}>▶</span>
+              <strong>TensorFlow</strong>: Deep learning frameworks
+            </li>
+            <li style={{ margin: '8px 0', paddingLeft: '20px', position: 'relative' }}>
+              <span style={{ position: 'absolute', left: '0', color: '#f093fb' }}>▶</span>
+              <strong>Plotly/D3.js</strong>: Data visualization
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export const SoftwareSkillsMatrix = () => {
   const { theme } = useTheme();
   const [mounted, setMounted] = useState(false);
   const [selectedSkill, setSelectedSkill] = useState(0);
@@ -1750,40 +1867,40 @@ export const SkillsMatrix = () => {
   
   const skills = [
     {
-      name: 'Java Fundamentals',
+      name: 'Web Development',
       level: 90,
-      description: 'Object-oriented programming, inheritance, polymorphism',
+      description: 'React, Next.js, TypeScript, and modern frontend frameworks',
+      color: '#f093fb'
+    },
+    {
+      name: 'Mobile Development',
+      level: 85,
+      description: 'Flutter, Dart, and cross-platform app development',
+      color: '#4facfe'
+    },
+    {
+      name: 'Data Science',
+      level: 88,
+      description: 'Python, pandas, statistical analysis, and visualization',
       color: '#f59e0b'
     },
     {
-      name: 'WPILib Framework',
-      level: 85,
-      description: 'Command-based programming, subsystems, and schedulers',
+      name: 'Machine Learning',
+      level: 80,
+      description: 'scikit-learn, TensorFlow, and predictive modeling',
       color: '#10b981'
     },
     {
-      name: 'Hardware Integration',
-      level: 80,
-      description: 'Motors, sensors, pneumatics, and CAN bus communication',
-      color: '#3b82f6'
-    },
-    {
-      name: 'Autonomous Programming',
+      name: 'Cloud Infrastructure',
       level: 75,
-      description: 'Path planning, trajectory following, and state machines',
+      description: 'Firebase, AWS, database design, and API development',
       color: '#8b5cf6'
     },
     {
-      name: 'Computer Vision',
-      level: 70,
-      description: 'OpenCV, PhotonVision, and real-time image processing',
+      name: 'DevOps & Testing',
+      level: 82,
+      description: 'CI/CD, automated testing, monitoring, and deployment',
       color: '#ef4444'
-    },
-    {
-      name: 'Debugging & Testing',
-      level: 88,
-      description: 'Unit testing, simulation, and systematic troubleshooting',
-      color: '#06b6d4'
     }
   ];
   
@@ -1799,7 +1916,7 @@ export const SkillsMatrix = () => {
         ? '1px solid rgba(255, 255, 255, 0.1)'
         : '1px solid rgba(0, 0, 0, 0.05)',
       boxShadow: isDark 
-        ? '0 20px 40px -12px rgba(0, 0, 0, 0.8)'
+        ? '0 20px 40px -12px rgba(255, 255, 255, 0.1)'
         : '0 20px 40px -12px rgba(0, 0, 0, 0.1)'
     }}>
       <div style={{
@@ -1812,13 +1929,13 @@ export const SkillsMatrix = () => {
           marginBottom: '16px',
           color: isDark ? '#f1f5f9' : '#1e293b'
         }}>
-          Essential Programming Skills
+          Essential Software Skills
         </h3>
         <p style={{
           color: isDark ? '#94a3b8' : '#64748b',
           fontSize: '16px'
         }}>
-          Master these core competencies for FRC programming success
+          Master these core competencies for Software Wing excellence
         </p>
       </div>
       
@@ -1897,7 +2014,7 @@ export const SkillsMatrix = () => {
   );
 };
 
-export const ProgrammingPath = () => {
+export const SoftwarePath = () => {
   const { theme } = useTheme();
   const [mounted, setMounted] = useState(false);
   
@@ -1912,31 +2029,31 @@ export const ProgrammingPath = () => {
   const pathSteps = [
     {
       phase: 'Foundation',
-      title: 'Java & OOP Basics',
-      duration: '2-3 weeks',
-      topics: ['Variables & Methods', 'Classes & Objects', 'Inheritance', 'Debugging'],
-      color: '#f59e0b'
+      title: 'Web Development Basics',
+      duration: '3-4 weeks',
+      topics: ['HTML/CSS/JavaScript', 'React Fundamentals', 'Database Basics', 'Version Control'],
+      color: '#f093fb'
     },
     {
-      phase: 'Framework',
-      title: 'WPILib & Command-Based',
+      phase: 'Frontend',
+      title: 'Modern Web Apps',
+      duration: '4-5 weeks',
+      topics: ['Next.js Framework', 'TypeScript', 'State Management', 'UI/UX Design'],
+      color: '#4facfe'
+    },
+    {
+      phase: 'Backend',
+      title: 'APIs & Databases',
       duration: '3-4 weeks',
-      topics: ['Subsystems', 'Commands', 'Schedulers', 'Robot Class'],
+      topics: ['RESTful APIs', 'Database Design', 'Authentication', 'Cloud Deployment'],
       color: '#10b981'
     },
     {
-      phase: 'Hardware',
-      title: 'Sensors & Actuators',
-      duration: '2-3 weeks',
-      topics: ['Motor Controllers', 'Encoders', 'Gyroscopes', 'Pneumatics'],
-      color: '#3b82f6'
-    },
-    {
       phase: 'Advanced',
-      title: 'Autonomous & Vision',
-      duration: '4-5 weeks',
-      topics: ['Path Planning', 'PID Control', 'Computer Vision', 'State Machines'],
-      color: '#8b5cf6'
+      title: 'Data Science & AI',
+      duration: '5-6 weeks',
+      topics: ['Python/pandas', 'Machine Learning', 'Data Visualization', 'Prediction Models'],
+      color: '#f59e0b'
     }
   ];
   
@@ -1965,13 +2082,13 @@ export const ProgrammingPath = () => {
           marginBottom: '16px',
           color: isDark ? '#f1f5f9' : '#1e293b'
         }}>
-          Your Learning Pathway
+          Your Software Journey
         </h3>
         <p style={{
           color: isDark ? '#94a3b8' : '#64748b',
           fontSize: '16px'
         }}>
-          Structured progression from beginner to advanced FRC programmer
+          Structured progression from beginner to advanced Software Wing developer
         </p>
       </div>
       
@@ -2052,208 +2169,17 @@ export const ProgrammingPath = () => {
                     </span>
                   </div>
                 ))}
-              </div>
             </div>
           </div>
-        ))}
-      </div>
-    </div>
-  );
-};
-
-export const LiveCodeDemo = () => {
-  const { theme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-  const [activeTab, setActiveTab] = useState(0);
-  
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted) return null;
-  
-  const isDark = theme === 'dark';
-  
-  const demos = [
-    {
-      title: "Tank Drive",
-      description: "Basic robot driving with tank-style controls",
-      code: `public class DriveSubsystem extends SubsystemBase {
-  private final WPI_TalonFX leftMotor;
-  private final WPI_TalonFX rightMotor;
-  
-  public void tankDrive(double leftSpeed, double rightSpeed) {
-    leftMotor.set(leftSpeed);
-    rightMotor.set(rightSpeed);
-  }
-  
-  public void arcadeDrive(double speed, double rotation) {
-    tankDrive(speed + rotation, speed - rotation);
-  }
-}`
-    },
-    {
-      title: "PID Control",
-      description: "Precise position control using PID algorithms",
-      code: `public class ElevatorSubsystem extends SubsystemBase {
-  private final PIDController pidController;
-  private final WPI_TalonFX motor;
-  
-  public ElevatorSubsystem() {
-    pidController = new PIDController(0.5, 0.0, 0.1);
-    pidController.setTolerance(0.5);
-  }
-  
-  public void setPosition(double targetPosition) {
-    double output = pidController.calculate(
-      motor.getSelectedSensorPosition(), 
-      targetPosition
-    );
-    motor.set(output);
-  }
-}`
-    },
-    {
-      title: "Autonomous Command",
-      description: "Sequential autonomous routine using commands",
-      code: `public class AutonomousCommand extends SequentialCommandGroup {
-  public AutonomousCommand(DriveSubsystem drive, ShooterSubsystem shooter) {
-    addCommands(
-      new DriveForwardCommand(drive, 2.0),
-      new TurnToAngleCommand(drive, 90),
-      new ShootCommand(shooter, 3500),
-      new DriveForwardCommand(drive, 1.5)
-    );
-  }
-}`
-    }
-  ];
-  
-  return (
-    <div style={{
-      background: isDark 
-        ? 'linear-gradient(145deg, #1e293b 0%, #0f172a 100%)'
-        : 'linear-gradient(145deg, #ffffff 0%, #f8fafc 100%)',
-      borderRadius: '24px',
-      padding: '50px 40px',
-      margin: '60px 0',
-      border: isDark 
-        ? '1px solid rgba(255, 255, 255, 0.1)'
-        : '1px solid rgba(0, 0, 0, 0.05)',
-      boxShadow: isDark 
-        ? '0 20px 40px -12px rgba(255, 255, 255, 0.1)'
-        : '0 20px 40px -12px rgba(0, 0, 0, 0.1)'
-    }}>
-      <div style={{
-        textAlign: 'center',
-        marginBottom: '40px'
-      }}>
-        <h3 style={{
-          fontSize: 'clamp(24px, 4vw, 32px)',
-          fontWeight: '800',
-          marginBottom: '16px',
-          color: isDark ? '#f1f5f9' : '#1e293b'
-        }}>
-          Interactive Code Examples
-        </h3>
-        <p style={{
-          color: isDark ? '#94a3b8' : '#64748b',
-          fontSize: '16px'
-        }}>
-          Explore real FRC code patterns and best practices
-        </p>
-      </div>
-      
-      {/* Tab Navigation */}
-      <div style={{
-        display: 'flex',
-        gap: '8px',
-        marginBottom: '24px',
-        justifyContent: 'center',
-        flexWrap: 'wrap'
-      }}>
-        {demos.map((demo, index) => (
-          <button
-            key={index}
-            style={{
-              background: activeTab === index 
-                ? 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'
-                : isDark ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.05)',
-              color: activeTab === index ? 'white' : isDark ? '#cbd5e1' : '#64748b',
-              border: 'none',
-              borderRadius: '12px',
-              padding: '12px 24px',
-              fontSize: '14px',
-              fontWeight: '600',
-              cursor: 'pointer',
-              transition: 'all 0.3s ease'
-            }}
-            onClick={() => setActiveTab(index)}
-          >
-            {demo.title}
-          </button>
-        ))}
-      </div>
-      
-      {/* Code Display */}
-      <div style={{
-        background: isDark ? '#0f172a' : '#f8fafc',
-        borderRadius: '16px',
-        border: isDark 
-          ? '1px solid rgba(255, 255, 255, 0.1)'
-          : '1px solid rgba(0, 0, 0, 0.1)',
-        overflow: 'hidden'
-      }}>
-        <div style={{
-          display: 'flex',
-          alignItems: 'center',
-          gap: '12px',
-          padding: '16px 24px',
-          borderBottom: isDark 
-            ? '1px solid rgba(255, 255, 255, 0.1)'
-            : '1px solid rgba(0, 0, 0, 0.1)',
-          background: isDark ? 'rgba(255, 255, 255, 0.05)' : 'rgba(0, 0, 0, 0.02)'
-        }}>
-          <div style={{ width: '12px', height: '12px', borderRadius: '50%', background: '#ff5f56' }} />
-          <div style={{ width: '12px', height: '12px', borderRadius: '50%', background: '#ffbd2e' }} />
-          <div style={{ width: '12px', height: '12px', borderRadius: '50%', background: '#27ca3f' }} />
-          <span style={{
-            marginLeft: '12px',
-            fontSize: '14px',
-            fontWeight: '600',
-            color: isDark ? '#f1f5f9' : '#1e293b'
-          }}>
-            {demos[activeTab].title}.java
-          </span>
-        </div>
-        
-        <div style={{ padding: '24px' }}>
-          <div style={{
-            marginBottom: '16px',
-            fontSize: '14px',
-            color: isDark ? '#94a3b8' : '#64748b'
-          }}>
-            {demos[activeTab].description}
           </div>
-          
-          <pre style={{
-            fontFamily: 'monospace',
-            fontSize: '14px',
-            lineHeight: '1.6',
-            color: isDark ? '#f1f5f9' : '#1e293b',
-            margin: 0,
-            whiteSpace: 'pre-wrap',
-            overflow: 'auto'
-          }}>
-            <code>{demos[activeTab].code}</code>
-          </pre>
-        </div>
+        ))}
       </div>
     </div>
   );
 };
 
-export const BenefitCard = ({ icon, title, description }) => {
+
+export const SoftwareBenefitCard = ({ icon, title, description }) => {
   const { theme } = useTheme();
   const [mounted, setMounted] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
@@ -2311,9 +2237,11 @@ export const BenefitCard = ({ icon, title, description }) => {
   );
 };
 
-export const TechStack = () => {
+
+export const SoftwareProjectsDemo = () => {
   const { theme } = useTheme();
   const [mounted, setMounted] = useState(false);
+  const [activeTab, setActiveTab] = useState(0);
   
   useEffect(() => {
     setMounted(true);
@@ -2322,173 +2250,190 @@ export const TechStack = () => {
   if (!mounted) return null;
   
   const isDark = theme === 'dark';
+  
+  const projects = [
+    {
+      title: "Scout Ops Dashboard",
+      description: "Real-time match analytics and team performance tracking",
+      stack: "React + TypeScript + Firebase",
+      features: ["Live match data", "Team rankings", "Alliance predictions", "Performance graphs"]
+    },
+    {
+      title: "Mobile Scouting App",
+      description: "Cross-platform data collection app for competitions",
+      stack: "Flutter + Dart + Offline Storage",
+      features: ["Offline capability", "Photo integration", "Data validation", "Real-time sync"]
+    },
+    {
+      title: "ML Prediction Engine",
+      description: "AI-powered match outcome and performance predictions",
+      stack: "Python + scikit-learn + TensorFlow",
+      features: ["Match predictions", "Team analysis", "Performance modeling", "Strategy optimization"]
+    }
+  ];
   
   return (
     <div style={{
-      background: 'linear-gradient(145deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1))',
-      borderRadius: '20px',
-      padding: '32px',
-      margin: '40px 0',
-      border: '1px solid rgba(102, 126, 234, 0.2)'
+      background: isDark 
+        ? 'linear-gradient(145deg, #1e293b 0%, #0f172a 100%)'
+        : 'linear-gradient(145deg, #ffffff 0%, #f8fafc 100%)',
+      borderRadius: '24px',
+      padding: '50px 40px',
+      margin: '60px 0',
+      border: isDark 
+        ? '1px solid rgba(255, 255, 255, 0.1)'
+        : '1px solid rgba(0, 0, 0, 0.05)',
+      boxShadow: isDark 
+        ? '0 20px 40px -12px rgba(255, 255, 255, 0.1)'
+        : '0 20px 40px -12px rgba(0, 0, 0, 0.1)'
     }}>
       <div style={{
-        display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
-        gap: '32px'
+        textAlign: 'center',
+        marginBottom: '40px'
       }}>
-        <div>
-          <div style={{
-            color: '#667eea',
-            display: 'block',
-            marginBottom: '16px',
-            fontSize: '18px',
-            fontWeight: '700'
-          }}>
-            Languages & Frameworks:
-          </div>
-          <ul style={{ margin: 0, paddingLeft: '0', listStyle: 'none' }}>
-            <li style={{ margin: '8px 0', paddingLeft: '20px', position: 'relative' }}>
-              <span style={{ position: 'absolute', left: '0', color: '#667eea' }}>▶</span>
-              <strong>Java</strong>: Primary language with WPILib framework
-            </li>
-            <li style={{ margin: '8px 0', paddingLeft: '20px', position: 'relative' }}>
-              <span style={{ position: 'absolute', left: '0', color: '#667eea' }}>▶</span>
-              <strong>C++</strong>: Advanced performance programming
-            </li>
-            <li style={{ margin: '8px 0', paddingLeft: '20px', position: 'relative' }}>
-              <span style={{ position: 'absolute', left: '0', color: '#667eea' }}>▶</span>
-              <strong>Python</strong>: Vision processing and data analysis
-            </li>
-            <li style={{ margin: '8px 0', paddingLeft: '20px', position: 'relative' }}>
-              <span style={{ position: 'absolute', left: '0', color: '#667eea' }}>▶</span>
-              <strong>LabVIEW</strong>: Graphical programming alternative
-            </li>
-          </ul>
-        </div>
-        
-        <div>
-          <div style={{
-            color: '#667eea',
-            display: 'block',
-            marginBottom: '16px',
-            fontSize: '18px',
-            fontWeight: '700'
-          }}>
-            Key Technologies:
-          </div>
-          <ul style={{ margin: 0, paddingLeft: '0', listStyle: 'none' }}>
-            <li style={{ margin: '8px 0', paddingLeft: '20px', position: 'relative' }}>
-              <span style={{ position: 'absolute', left: '0', color: '#667eea' }}>▶</span>
-              <strong>WPILib</strong>: FIRST's robotics library
-            </li>
-            <li style={{ margin: '8px 0', paddingLeft: '20px', position: 'relative' }}>
-              <span style={{ position: 'absolute', left: '0', color: '#667eea' }}>▶</span>
-              <strong>NetworkTables</strong>: Real-time data sharing
-            </li>
-            <li style={{ margin: '8px 0', paddingLeft: '20px', position: 'relative' }}>
-              <span style={{ position: 'absolute', left: '0', color: '#667eea' }}>▶</span>
-              <strong>PathPlanner</strong>: Autonomous path generation
-            </li>
-            <li style={{ margin: '8px 0', paddingLeft: '20px', position: 'relative' }}>
-              <span style={{ position: 'absolute', left: '0', color: '#667eea' }}>▶</span>
-              <strong>PhotonVision</strong>: Computer vision processing
-            </li>
-            <li style={{ margin: '8px 0', paddingLeft: '20px', position: 'relative' }}>
-              <span style={{ position: 'absolute', left: '0', color: '#667eea' }}>▶</span>
-              <strong>Phoenix & REV Libraries</strong>: Motor controller APIs
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-export const ResourceWidget = ({ icon, title, link, displayUrl }) => {
-  const { theme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-  const [isHovered, setIsHovered] = useState(false);
-  
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted) return null;
-  
-  const isDark = theme === 'dark';
-  
-  return (
-    <div 
-      style={{
-        background: 'linear-gradient(145deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05))',
-        backdropFilter: 'blur(20px)',
-        border: isHovered ? 'rgba(255, 255, 255, 0.4)' : 'rgba(255, 255, 255, 0.2)',
-        borderWidth: '1px',
-        borderStyle: 'solid',
-        borderRadius: '20px',
-        padding: '24px',
-        display: 'flex',
-        alignItems: 'center',
-        gap: '16px',
-        transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-        cursor: 'pointer',
-        position: 'relative',
-        overflow: 'hidden',
-        transform: isHovered ? 'translateY(-8px) scale(1.02)' : 'translateY(0) scale(1)',
-        boxShadow: isHovered ? '0 20px 40px rgba(0, 0, 0, 0.15)' : 'none'
-      }}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-      onClick={() => window.open(link, '_blank')}
-    >
-      {isHovered && (
-        <div style={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          background: 'linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1))',
-          borderRadius: '20px'
-        }} />
-      )}
-      
-      <div style={{
-        fontSize: '32px',
-        width: '60px',
-        height: '60px',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        background: 'linear-gradient(135deg, #667eea, #764ba2)',
-        borderRadius: '16px',
-        position: 'relative',
-        zIndex: 1
-      }}>
-        {icon}
-      </div>
-      
-      <div style={{ position: 'relative', zIndex: 1 }}>
-        <h4 style={{
-          fontSize: '18px',
-          fontWeight: '700',
-          margin: '0 0 8px 0',
+        <h3 style={{
+          fontSize: 'clamp(24px, 4vw, 32px)',
+          fontWeight: '800',
+          marginBottom: '16px',
           color: isDark ? '#f1f5f9' : '#1e293b'
         }}>
-          {title}
-        </h4>
-        <div style={{
-          color: '#667eea',
-          textDecoration: 'none',
-          fontWeight: '600',
-          fontSize: '14px'
+          Featured Software Projects
+        </h3>
+        <p style={{
+          color: isDark ? '#94a3b8' : '#64748b',
+          fontSize: '16px'
         }}>
-          {displayUrl}
+          Explore the applications and systems built by our Software Wing
+        </p>
+      </div>
+      
+      {/* Project tabs */}
+      <div style={{
+        display: 'flex',
+        gap: '8px',
+        marginBottom: '24px',
+        justifyContent: 'center',
+        flexWrap: 'wrap'
+      }}>
+        {projects.map((project, index) => (
+          <button
+            key={index}
+            style={{
+              background: activeTab === index 
+                ? 'linear-gradient(135deg, #f093fb 0%, #4facfe 100%)'
+                : isDark ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.05)',
+              color: activeTab === index ? 'white' : isDark ? '#cbd5e1' : '#64748b',
+              border: 'none',
+              borderRadius: '12px',
+              padding: '12px 24px',
+              fontSize: '14px',
+              fontWeight: '600',
+              cursor: 'pointer',
+              transition: 'all 0.3s ease'
+            }}
+            onClick={() => setActiveTab(index)}
+          >
+            {project.title}
+          </button>
+        ))}
+      </div>
+      
+      {/* Project display */}
+      <div style={{
+        background: isDark ? '#0f172a' : '#f8fafc',
+        borderRadius: '16px',
+        border: isDark 
+          ? '1px solid rgba(255, 255, 255, 0.1)'
+          : '1px solid rgba(0, 0, 0, 0.1)',
+        overflow: 'hidden'
+      }}>
+        <div style={{
+          padding: '32px'
+        }}>
+          <div style={{
+            marginBottom: '24px'
+          }}>
+            <h4 style={{
+              fontSize: '24px',
+              fontWeight: '700',
+              color: isDark ? '#f1f5f9' : '#1e293b',
+              marginBottom: '8px'
+            }}>
+              {projects[activeTab].title}
+            </h4>
+            <p style={{
+              color: isDark ? '#94a3b8' : '#64748b',
+              fontSize: '16px',
+              marginBottom: '12px'
+            }}>
+              {projects[activeTab].description}
+            </p>
+            <div style={{
+              display: 'inline-block',
+              background: 'linear-gradient(135deg, #f093fb 0%, #4facfe 100%)',
+              color: 'white',
+              padding: '6px 12px',
+              borderRadius: '8px',
+              fontSize: '12px',
+              fontWeight: '600'
+            }}>
+              {projects[activeTab].stack}
+            </div>
+          </div>
+          
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+            gap: '16px'
+          }}>
+            {projects[activeTab].features.map((feature, featureIndex) => (
+              <div key={featureIndex} style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '12px',
+                padding: '12px',
+                background: isDark ? 'rgba(255, 255, 255, 0.05)' : 'rgba(255, 255, 255, 0.8)',
+                borderRadius: '12px',
+                border: isDark 
+                  ? '1px solid rgba(255, 255, 255, 0.1)'
+                  : '1px solid rgba(0, 0, 0, 0.05)'
+              }}>
+                <div style={{
+                  width: '8px',
+                  height: '8px',
+                  borderRadius: '50%',
+                  background: 'linear-gradient(135deg, #f093fb 0%, #4facfe 100%)'
+                }} />
+                <span style={{
+                  color: isDark ? '#cbd5e1' : '#64748b',
+                  fontSize: '14px',
+                  fontWeight: '500'
+                }}>
+                  {feature}
+                </span>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>
   );
 };
+
+export const SoftwareWingPage = () => {
+  return (
+    <div>
+      <ProgrammingHero />
+      <SoftwareStats />
+      <SoftwareTechStack />
+      <SoftwareSkillsMatrix />
+      <SoftwarePath />
+      <SoftwareBenefitCard />
+      <SoftwareProjectsDemo />
+    </div>
+  );
+};
+
 
 export const EnhancedButton = ({ 
   children, 
@@ -2580,5 +2525,514 @@ export const EnhancedButton = ({
         {children}
       </span>
     </button>
+  );
+};
+
+export const ProgrammingWingsGrid = () => {
+  const { theme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+  const [activeWing, setActiveWing] = useState(0);
+  
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) return null;
+  
+  const isDark = theme === 'dark';
+  
+  const wings = [
+    {
+      title: "FRC Wing",
+      subtitle: "The Robot Programmers",
+      icon: "🦾",
+      gradient: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+      color: "#667eea",
+      description: "Focuses specifically on programming the robot for the FIRST Robotics Competition.",
+      expertise: [
+        "Motor control (Falcons, NEOs, etc.)",
+        "Solenoids and pneumatics", 
+        "Swerve drive systems",
+        "PID tuning and motion profiling",
+        "Vision systems (Limelight, AprilTags)",
+        "Real-time autonomous path planning"
+      ],
+      languages: ["Java"],
+      focus: "Make the robot smart, fast, and competition-ready",
+      hardware: "RoboRIO, motors, sensors, pneumatics"
+    },
+    {
+      title: "Software Wing", 
+      subtitle: "The Tech Infrastructure Experts",
+      icon: "💻",
+      gradient: "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)",
+      color: "#f093fb",
+      description: "Handles everything outside the robot code, but still critical to the team's performance.",
+      expertise: [
+        "Web development (React, Next.js, Firebase)",
+        "Mobile app development (Flutter, Dart)",
+        "Backend systems and cloud services",
+        "AI/ML model development for FRC strategy",
+        "Virtual environments and simulation",
+        "Strategic tooling like Scout Ops Suite"
+      ],
+      languages: ["Dart", "Python", "JavaScript", "SQL"],
+      focus: "Build tools to support robot and strategy",
+      hardware: "Firebase, ML models, Scout Ops, web platforms"
+    }
+  ];
+
+  return (
+    <div style={{
+      margin: '60px 0'
+    }}>
+      <div style={{
+        textAlign: 'center',
+        marginBottom: '50px'
+      }}>
+        <h2 style={{
+          fontSize: 'clamp(28px, 4vw, 36px)',
+          fontWeight: '800',
+          marginBottom: '16px',
+          color: isDark ? '#f1f5f9' : '#1e293b'
+        }}>
+          Two Wings, One Mission
+        </h2>
+        <p style={{
+          color: isDark ? '#94a3b8' : '#64748b',
+          fontSize: '18px',
+          maxWidth: '600px',
+          margin: '0 auto'
+        }}>
+          Specialized expertise in robot programming and software infrastructure
+        </p>
+      </div>
+
+      <div style={{
+        display: 'grid',
+        gridTemplateColumns: 'repeat(auto-fit, minmax(450px, 1fr))',
+        gap: '32px'
+      }}>
+        {wings.map((wing, index) => (
+          <div
+            key={index}
+            style={{
+              background: isDark 
+                ? 'linear-gradient(145deg, #1e293b 0%, #0f172a 100%)'
+                : 'linear-gradient(145deg, #ffffff 0%, #f8fafc 100%)',
+              borderRadius: '24px',
+              padding: '40px',
+              border: activeWing === index 
+                ? `3px solid ${wing.color}`
+                : isDark 
+                  ? '1px solid rgba(255, 255, 255, 0.1)'
+                  : '1px solid rgba(0, 0, 0, 0.05)',
+              boxShadow: activeWing === index
+                ? `0 20px 40px -8px ${wing.color}30`
+                : isDark 
+                  ? '0 16px 32px -8px rgba(0, 0, 0, 0.6)'
+                  : '0 16px 32px -8px rgba(0, 0, 0, 0.1)',
+              cursor: 'pointer',
+              transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+              transform: activeWing === index ? 'translateY(-8px) scale(1.02)' : 'translateY(0) scale(1)',
+              position: 'relative',
+              overflow: 'hidden'
+            }}
+            onClick={() => setActiveWing(index)}
+            onMouseEnter={() => setActiveWing(index)}
+          >
+            {/* Background gradient overlay */}
+            <div style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              background: wing.gradient,
+              opacity: activeWing === index ? 0.1 : 0.05,
+              transition: 'opacity 0.4s ease'
+            }} />
+
+            {/* Wing header */}
+            <div style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '20px',
+              marginBottom: '24px',
+              position: 'relative',
+              zIndex: 1
+            }}>
+              <div style={{
+                fontSize: '56px',
+                transform: activeWing === index ? 'scale(1.1) rotate(5deg)' : 'scale(1)',
+                transition: 'transform 0.4s ease'
+              }}>
+                {wing.icon}
+              </div>
+              <div>
+                <h3 style={{
+                  fontSize: '28px',
+                  fontWeight: '800',
+                  color: isDark ? '#f1f5f9' : '#1e293b',
+                  marginBottom: '4px'
+                }}>
+                  {wing.title}
+                </h3>
+                <p style={{
+                  fontSize: '16px',
+                  color: wing.color,
+                  fontWeight: '600',
+                  margin: 0
+                }}>
+                  {wing.subtitle}
+                </p>
+              </div>
+            </div>
+
+            {/* Description */}
+            <p style={{
+              color: isDark ? '#cbd5e1' : '#64748b',
+              fontSize: '16px',
+              lineHeight: '1.6',
+              marginBottom: '24px',
+              position: 'relative',
+              zIndex: 1
+            }}>
+              {wing.description}
+            </p>
+
+            {/* Expertise list */}
+            <div style={{
+              marginBottom: '24px',
+              position: 'relative',
+              zIndex: 1
+            }}>
+              <h4 style={{
+                fontSize: '16px',
+                fontWeight: '700',
+                color: isDark ? '#f1f5f9' : '#1e293b',
+                marginBottom: '12px'
+              }}>
+                Key Expertise:
+              </h4>
+              <div style={{
+                display: 'grid',
+                gap: '8px'
+              }}>
+                {wing.expertise.slice(0, 4).map((skill, skillIndex) => (
+                  <div key={skillIndex} style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '12px',
+                    padding: '4px 0'
+                  }}>
+                    <div style={{
+                      width: '6px',
+                      height: '6px',
+                      borderRadius: '50%',
+                      background: wing.gradient
+                    }} />
+                    <span style={{
+                      color: isDark ? '#e2e8f0' : '#475569',
+                      fontSize: '14px',
+                      fontWeight: '500'
+                    }}>
+                      {skill}
+                    </span>
+                  </div>
+                ))}
+                {wing.expertise.length > 4 && (
+                  <div style={{
+                    fontSize: '12px',
+                    color: wing.color,
+                    fontWeight: '600',
+                    marginTop: '8px'
+                  }}>
+                    +{wing.expertise.length - 4} more areas...
+                  </div>
+                )}
+              </div>
+            </div>
+
+            {/* Languages and focus */}
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: '1fr 1fr',
+              gap: '16px',
+              position: 'relative',
+              zIndex: 1
+            }}>
+              <div>
+                <h5 style={{
+                  fontSize: '12px',
+                  fontWeight: '700',
+                  color: isDark ? '#94a3b8' : '#64748b',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.1em',
+                  marginBottom: '8px'
+                }}>
+                  Languages
+                </h5>
+                <div style={{
+                  fontSize: '14px',
+                  color: wing.color,
+                  fontWeight: '600'
+                }}>
+                  {wing.languages.join(', ')}
+                </div>
+              </div>
+              <div>
+                <h5 style={{
+                  fontSize: '12px',
+                  fontWeight: '700',
+                  color: isDark ? '#94a3b8' : '#64748b',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.1em',
+                  marginBottom: '8px'
+                }}>
+                  Systems
+                </h5>
+                <div style={{
+                  fontSize: '14px',
+                  color: isDark ? '#cbd5e1' : '#64748b',
+                  fontWeight: '500'
+                }}>
+                  {wing.hardware}
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export const WingComparisonWidget = () => {
+  const { theme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+  
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) return null;
+  
+  const isDark = theme === 'dark';
+
+  const comparisonData = [
+    {
+      category: "Primary Focus",
+      frc: "Programming the robot's behavior",
+      software: "Building tools to support robot and strategy"
+    },
+    {
+      category: "Languages Used", 
+      frc: "Java",
+      software: "Dart, Python, JavaScript, SQL, etc."
+    },
+    {
+      category: "Systems Handled",
+      frc: "RoboRIO, motors, sensors, pneumatics",
+      software: "Firebase, ML models, Scout Ops, web platforms"
+    },
+    {
+      category: "Tech Mastery",
+      frc: "Robotics code, control systems",
+      software: "Full-stack development, data science, AI"
+    }
+  ];
+
+  return (
+    <div style={{
+      background: isDark 
+        ? 'linear-gradient(145deg, #1e293b 0%, #0f172a 100%)'
+        : 'linear-gradient(145deg, #ffffff 0%, #f8fafc 100%)',
+      borderRadius: '24px',
+      padding: '40px',
+      margin: '60px 0',
+      border: isDark 
+        ? '1px solid rgba(255, 255, 255, 0.1)'
+        : '1px solid rgba(0, 0, 0, 0.05)',
+      boxShadow: isDark 
+        ? '0 20px 40px -12px rgba(255, 255, 255, 0.8)'
+        : '0 20px 40px -12px rgba(0, 0, 0, 0.1)'
+    }}>
+      <div style={{
+        textAlign: 'center',
+        marginBottom: '32px'
+      }}>
+        <h3 style={{
+          fontSize: 'clamp(24px, 4vw, 32px)',
+          fontWeight: '800',
+          marginBottom: '16px',
+          color: isDark ? '#f1f5f9' : '#1e293b'
+        }}>
+          🧠 Wing Comparison Summary
+        </h3>
+        <p style={{
+          color: isDark ? '#94a3b8' : '#64748b',
+          fontSize: '16px'
+        }}>
+          Both wings are technically advanced, but in different domains
+        </p>
+      </div>
+
+      {/* Comparison table */}
+      <div style={{
+        background: isDark ? 'rgba(255, 255, 255, 0.05)' : 'rgba(255, 255, 255, 0.8)',
+        borderRadius: '16px',
+        overflow: 'hidden',
+        border: isDark 
+          ? '1px solid rgba(255, 255, 255, 0.1)'
+          : '1px solid rgba(0, 0, 0, 0.05)'
+      }}>
+        {/* Header */}
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: '1fr 1fr 1fr',
+          background: isDark ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.05)',
+          padding: '20px'
+        }}>
+          <div style={{
+            fontSize: '16px',
+            fontWeight: '700',
+            color: isDark ? '#f1f5f9' : '#1e293b'
+          }}>
+            Role
+          </div>
+          <div style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: '12px',
+            fontSize: '16px',
+            fontWeight: '700',
+            color: '#667eea'
+          }}>
+            🦾 FRC Wing
+          </div>
+          <div style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: '12px',
+            fontSize: '16px',
+            fontWeight: '700',
+            color: '#f093fb'
+          }}>
+            💻 Software Wing
+          </div>
+        </div>
+
+        {/* Comparison rows */}
+        {comparisonData.map((row, index) => (
+          <div 
+            key={index}
+            style={{
+              display: 'grid',
+              gridTemplateColumns: '1fr 1fr 1fr',
+              padding: '20px',
+              borderBottom: index < comparisonData.length - 1 
+                ? isDark 
+                  ? '1px solid rgba(255, 255, 255, 0.1)'
+                  : '1px solid rgba(0, 0, 0, 0.05)'
+                : 'none',
+              transition: 'all 0.3s ease',
+              cursor: 'pointer'
+            }}
+            className="comparison-row"
+          >
+            <div style={{
+              fontSize: '14px',
+              fontWeight: '600',
+              color: isDark ? '#cbd5e1' : '#64748b'
+            }}>
+              {row.category}
+            </div>
+            <div style={{
+              fontSize: '14px',
+              color: isDark ? '#e2e8f0' : '#475569',
+              lineHeight: '1.5'
+            }}>
+              {row.frc}
+            </div>
+            <div style={{
+              fontSize: '14px',
+              color: isDark ? '#e2e8f0' : '#475569',
+              lineHeight: '1.5'
+            }}>
+              {row.software}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Summary points */}
+      <div style={{
+        marginTop: '32px',
+        display: 'grid',
+        gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+        gap: '24px'
+      }}>
+        <div style={{
+          padding: '24px',
+          background: 'linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1))',
+          borderRadius: '16px',
+          border: '1px solid rgba(102, 126, 234, 0.2)'
+        }}>
+          <h4 style={{
+            fontSize: '16px',
+            fontWeight: '700',
+            color: '#667eea',
+            marginBottom: '12px',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '8px'
+          }}>
+            🦾 FRC Wing Focus
+          </h4>
+          <p style={{
+            fontSize: '14px',
+            color: isDark ? '#cbd5e1' : '#64748b',
+            margin: 0,
+            lineHeight: '1.5'
+          }}>
+            Robot-focused and hardware-aware. Masters real-time control systems and competition robotics.
+          </p>
+        </div>
+        
+        <div style={{
+          padding: '24px',
+          background: 'linear-gradient(135deg, rgba(240, 147, 251, 0.1), rgba(245, 87, 108, 0.1))',
+          borderRadius: '16px',
+          border: '1px solid rgba(240, 147, 251, 0.2)'
+        }}>
+          <h4 style={{
+            fontSize: '16px',
+            fontWeight: '700',
+            color: '#f093fb',
+            marginBottom: '12px',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '8px'
+          }}>
+            💻 Software Wing Focus
+          </h4>
+          <p style={{
+            fontSize: '14px',
+            color: isDark ? '#cbd5e1' : '#64748b',
+            margin: 0,
+            lineHeight: '1.5'
+          }}>
+            System-focused and strategy-driven. Builds digital infrastructure and competitive intelligence tools.
+          </p>
+        </div>
+      </div>
+
+      <style jsx>{`
+        .comparison-row:hover {
+          background: ${isDark ? 'rgba(255, 255, 255, 0.05)' : 'rgba(0, 0, 0, 0.02)'};
+        }
+      `}</style>
+    </div>
   );
 };

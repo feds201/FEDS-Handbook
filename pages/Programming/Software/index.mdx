@@ -1,0 +1,261 @@
+import {Callout} from 'nextra/components';
+import Head from 'next/head';
+import { Cards, Card } from 'nextra/components';
+import { ProgrammingHero, SoftwareStats, SoftwareTechStack, SoftwareSkillsMatrix, SoftwarePath, SoftwareBenefitCard, SoftwareProjectsDemo } from '../../../components';
+
+<Head>
+    <title>Software Wing Excellence - FEDS201</title>
+    <meta property="og:title" content="Software Wing Excellence - FEDS201" key="title" />
+    <meta property="og:description" content="Build the digital infrastructure that powers championship robotics - from web apps to AI analytics" />
+</Head>
+
+<ProgrammingHero />
+
+<div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 20px' }}>
+
+# Welcome to Software Wing Excellence
+
+**Where Code Powers Strategy**
+
+Software Wing programming isn't just about building applications—it's about creating the digital ecosystem that gives our team competitive advantage. You'll develop strategic tools, analytics platforms, and infrastructure systems that support every aspect of our robotics program, from scouting to match prediction.
+
+<SoftwareStats />
+
+## Why Software Wing Matters
+
+<div style={{
+  display: 'grid',
+  gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+  gap: '24px',
+  margin: '40px 0'
+}}>
+
+<SoftwareBenefitCard 
+  icon="🚀"
+  title="Strategic Advantage"
+  description="Build analytics and prediction systems that give our team the competitive edge in alliance selection and match strategy."
+/>
+
+<SoftwareBenefitCard 
+  icon="📊"
+  title="Data-Driven Decisions"
+  description="Transform raw competition data into actionable insights using machine learning and advanced analytics."
+/>
+
+<SoftwareBenefitCard 
+  icon="🌐"
+  title="Digital Infrastructure"
+  description="Create scalable web platforms, mobile apps, and cloud systems that support team operations year-round."
+/>
+
+<SoftwareBenefitCard 
+  icon="🤖"
+  title="AI & Automation"
+  description="Develop intelligent systems for scouting automation, performance prediction, and strategic optimization."
+/>
+
+</div>
+
+## Software Development Fundamentals
+
+### The Software Wing Technology Stack
+
+<SoftwareTechStack />
+
+<SoftwareSkillsMatrix />
+
+## Your Software Journey
+
+<SoftwarePath />
+
+## Interactive Project Exploration
+
+<SoftwareProjectsDemo />
+
+<Callout type="info" emoji="💡">
+**Pro Tip**: Start with our web development fundamentals if you're new to software engineering, or dive into data science if you have programming experience. Every great software engineer started with their first "Hello, World!"
+</Callout>
+
+## Core Software Development Areas
+
+### 🌐 Web Development & Platforms
+Create powerful web applications that serve our team and the FRC community:
+- **Frontend Development**: React, Next.js, and modern UI frameworks
+- **Backend Systems**: Node.js, Express, and serverless architectures
+- **Database Design**: SQL, NoSQL, and data modeling
+- **Cloud Infrastructure**: Firebase, Supabase, and deployment strategies
+
+### 📱 Mobile Application Development
+Build cross-platform mobile solutions for competitions and team management:
+- **Flutter Development**: Cross-platform mobile apps with Dart
+- **Real-time Data Sync**: Live updates during competitions
+- **Offline Capability**: Apps that work without internet connectivity
+- **User Experience Design**: Intuitive interfaces for high-stress environments
+
+### 📊 Data Science & Analytics
+Transform competition data into strategic insights:
+- **Data Collection**: APIs, web scraping, and automated data pipelines
+- **Statistical Analysis**: Python, pandas, and data visualization
+- **Machine Learning**: Predictive models for match outcomes
+- **Performance Metrics**: Team and robot performance tracking
+
+### 🤖 AI & Machine Learning
+Develop intelligent systems for competitive advantage:
+- **Match Prediction**: AI models for outcome forecasting
+- **Scouting Automation**: Computer vision for automatic data collection
+- **Strategic Optimization**: Algorithm-driven alliance selection
+- **Natural Language Processing**: Automated report generation
+
+### ☁️ Cloud & Infrastructure
+Build scalable, reliable systems that support team operations:
+- **Cloud Platforms**: AWS, Google Cloud, Firebase deployment
+- **Database Management**: Real-time databases and data warehousing
+- **API Development**: RESTful and GraphQL service architectures
+- **DevOps Practices**: CI/CD, monitoring, and automated testing
+
+### 🔍 Competition Intelligence
+Create systems that provide strategic insights during competitions:
+- **Scout Ops Suite**: Comprehensive scouting and analytics platform
+- **Live Match Analysis**: Real-time data processing and visualization
+- **Alliance Strategy Tools**: Optimization algorithms for partner selection
+- **Performance Dashboards**: Executive-level insights for coaches
+
+## Quick Navigation
+
+<Cards>
+<Card 
+  title="🌐 Web Development" 
+  href="/Programming/Software/WebDevelopment"
+  description="Build modern web applications with React, Next.js, and cloud platforms"
+/>
+<Card 
+  title="📱 Mobile Development" 
+  href="/Programming/Software/MobileDevelopment"
+  description="Create cross-platform mobile apps with Flutter and Dart"
+/>
+<Card 
+  title="📊 Data Science" 
+  href="/Programming/Software/DataScience"
+  description="Analyze competition data and build predictive models"
+/>
+<Card 
+  title="🤖 AI & Machine Learning" 
+  href="/Programming/Software/MachineLearning"
+  description="Develop intelligent systems for competitive advantage"
+/>
+<Card 
+  title="☁️ Cloud Infrastructure" 
+  href="/Programming/Software/CloudInfrastructure"
+  description="Build scalable, reliable backend systems and APIs"
+/>
+<Card 
+  title="🔍 Scout Ops Suite" 
+  href="/Programming/Software/ScoutOps"
+  description="Master our comprehensive scouting and analytics platform"
+/>
+</Cards>
+
+## Advanced Topics
+
+### Full-Stack Architecture
+- **Microservices**: Scalable, distributed system design
+- **Real-time Systems**: WebSocket connections and live data streaming
+- **Performance Optimization**: Database indexing, caching, and CDNs
+- **Security Best Practices**: Authentication, authorization, and data protection
+
+### Data Engineering
+- **ETL Pipelines**: Extract, transform, and load competition data
+- **Data Warehousing**: Structured storage for historical analysis
+- **Stream Processing**: Real-time data processing during events
+- **API Integration**: Connect with FIRST's official APIs and third-party services
+
+### Machine Learning Operations
+- **Model Deployment**: Production ML systems and model serving
+- **A/B Testing**: Experimental framework for strategy validation
+- **Feature Engineering**: Data preprocessing and feature selection
+- **Model Monitoring**: Performance tracking and drift detection
+
+## Software Best Practices
+
+<Callout type="warning" emoji="⚠️">
+**Competition Reality Check**: Your applications will be used during high-stress competitions with unreliable internet. Design for resilience, offline capability, and graceful degradation.
+</Callout>
+
+### Development Standards
+- **Clean Code**: Write maintainable, readable, and testable code
+- **Version Control**: Git workflows and collaborative development
+- **Code Review**: Peer review process and quality gates
+- **Documentation**: API docs, user guides, and system architecture
+
+### Testing & Quality Assurance
+- **Unit Testing**: Comprehensive test coverage for all components
+- **Integration Testing**: End-to-end testing of complete workflows
+- **Performance Testing**: Load testing and optimization
+- **User Testing**: Validate interfaces with actual team members
+
+### Deployment & Operations
+- **Continuous Integration**: Automated testing and deployment pipelines
+- **Monitoring**: Application performance and error tracking
+- **Backup & Recovery**: Data protection and disaster recovery
+- **Scalability**: Systems that handle growing data and user loads
+
+## Competition Software Strategy
+
+### Event Preparation
+- **Data Pipeline Setup**: Automated collection of team and match data
+- **System Testing**: Validate all applications before competition
+- **Offline Capability**: Ensure critical functions work without internet
+- **Team Training**: Prepare users for competition software workflows
+
+### During Competition
+- **Real-time Analytics**: Live processing of match and scouting data
+- **Strategic Dashboards**: Executive decision support systems
+- **Alliance Analysis**: Rapid evaluation of potential partners
+- **Performance Tracking**: Monitor robot and team effectiveness
+
+### Post-Competition Analysis
+- **Data Aggregation**: Compile comprehensive event datasets
+- **Performance Reports**: Automated generation of insights and recommendations
+- **Model Validation**: Assess prediction accuracy and improve algorithms
+- **Strategic Planning**: Use insights to guide future development
+
+## Key Software Projects
+
+### Scout Ops Suite
+Our flagship scouting and analytics platform providing:
+- **Match Prediction**: AI-powered outcome forecasting
+- **Team Analytics**: Comprehensive performance tracking
+- **Alliance Optimization**: Strategic partner selection tools
+- **Real-time Dashboards**: Live competition intelligence
+
+### Mobile Scouting App
+Cross-platform mobile application featuring:
+- **Offline Data Collection**: Works without internet connectivity
+- **Real-time Sync**: Instant data sharing across devices
+- **Intuitive Interface**: Designed for high-stress competition environments
+- **Photo/Video Integration**: Visual scouting capabilities
+
+### Competition Dashboard
+Web-based command center providing:
+- **Live Match Tracking**: Real-time score and performance data
+- **Strategic Insights**: AI-generated recommendations
+- **Team Communication**: Coordination tools for coaching staff
+- **Historical Analysis**: Trend identification and pattern recognition
+
+## Your Next Steps
+
+1. **Assess Your Interests**: Determine if you prefer frontend, backend, data science, or AI
+2. **Choose Your Track**: Follow specialized learning paths based on your passion
+3. **Start Building**: Create real projects that solve actual team problems
+4. **Join the Ecosystem**: Contribute to existing projects and learn from the codebase
+5. **Stay Current**: Software moves fast - continuous learning is essential
+
+<Callout type="success" emoji="🎯">
+**Ready to Build?** Whether you're creating your first web app or training machine learning models, every software solution starts with understanding the problem. Focus on delivering value to your teammates.
+</Callout>
+
+**Remember**: Software development is about solving real problems for real people. While we'll teach you the technical skills, the most important ability is understanding user needs and delivering solutions that make a difference. Your code will directly impact our team's competitive success.
+
+Welcome to the Software Wing. Let's build the future of competitive robotics intelligence.
+
+</div>

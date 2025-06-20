@@ -372,7 +372,7 @@ export default {
             Last updated on {timestamp.toLocaleDateString()}
         </div>
     ),
-
+    darkMode: true,
     nextThemes: {
         defaultTheme: 'dark'
     }

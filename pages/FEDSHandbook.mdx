@@ -1,5 +1,12 @@
 import React from 'react';
-import { EnhancedHandbookHero, StatsSection, ModernCard, InteractiveTimeline, TeamStructureGrid, ModernWidgetGrid, InteractiveStatsWidget, ResourceWidget } from '../components';
+import { 
+  GenericHero,
+  GenericStats,
+  GenericGrid,
+  GenericWidget,
+  GenericTimeline,
+  GenericNavigation
+} from '../Components';
 
 # Rochester High School Robotics (FRC 201)
 
@@ -23,7 +30,54 @@ The success of Team 201 in robotics and its numerous other activities is due to 
 
 ## Our Mission & Core Values
 
-<ModernWidgetGrid />
+<GenericGrid
+  layout="responsive"
+  columns={{ xs: 1, sm: 2, md: 3 }}
+  gap="24px"
+  animation={{ enabled: true, stagger: 100 }}
+  items={[
+    {
+      title: 'Innovation',
+      description: 'Pushing the boundaries of what\'s possible in competitive robotics.',
+      icon: '💡'
+    },
+    {
+      title: 'Excellence',
+      description: 'Maintaining the highest standards in everything we do.',
+      icon: '🏆'
+    },
+    {
+      title: 'Collaboration',
+      description: 'Working together to achieve extraordinary results.',
+      icon: '🤝'
+    },
+    {
+      title: 'Learning',
+      description: 'Continuously growing through hands-on experience.',
+      icon: '📚'
+    },
+    {
+      title: 'Impact',
+      description: 'Making a positive difference in our community.',
+      icon: '🌟'
+    },
+    {
+      title: 'Sustainability',
+      description: 'Building responsibly for future generations.',
+      icon: '🌱'
+    }
+  ]}
+  renderItem={({ title, description, icon }) => (
+    <GenericWidget
+      title={title}
+      subtitle={description}
+      icon={icon}
+      variant="glass"
+      size="md"
+      interactive={false}
+    />
+  )}
+/>
 
 ### Essential Resources
 
@@ -34,32 +88,44 @@ The success of Team 201 in robotics and its numerous other activities is due to 
   margin: '40px 0'
 }}>
   
-<ResourceWidget 
+<GenericWidget 
   icon="🌐"
   title="Team Website"
+  subtitle="feds201.com"
+  variant="card"
+  size="sm"
+  interactive={true}
   link="http://www.feds201.com"
-  displayUrl="feds201.com"
 />
 
-<ResourceWidget 
+<GenericWidget 
   icon="🤖"
   title="FIRST Robotics"
+  subtitle="firstinspires.org"
+  variant="card"
+  size="sm"
+  interactive={true}
   link="http://www.firstinspires.org"
-  displayUrl="firstinspires.org"
 />
 
-<ResourceWidget 
+<GenericWidget 
   icon="🏛️"
   title="Michigan District"
+  subtitle="firstinmichigan.org"
+  variant="card"
+  size="sm"
+  interactive={true}
   link="http://www.firstinmichigan.org"
-  displayUrl="firstinmichigan.org"
 />
 
-<ResourceWidget 
+<GenericWidget 
   icon="💬"
   title="Community Forum"
+  subtitle="chiefdelphi.com"
+  variant="card"
+  size="sm"
+  interactive={true}
   link="http://www.chiefdelphi.com/forums"
-  displayUrl="chiefdelphi.com"
 />
 
 </div>
@@ -82,7 +148,50 @@ Our team operates year-round. During summer and fall, we conduct training, outre
 
 Each year FRC unveils a new challenge at kickoff in January. High school students work with professional mentors to solve the engineering design problem and then join other teams in alliances to play the game at competition events where they are judged on design, innovation, and performance. Students learn teamwork, acquire technical skills, develop business acumen, and discover strengths they never knew they had. The program is a life-changing, career-molding experience and it's a lot of fun. Be competitive and play hard on the field, but it is much, much more than a game.
 
-<InteractiveTimeline />
+<GenericTimeline
+  orientation="vertical"
+  variant="cards"
+  interactive={true}
+  animation={{ enabled: true, stagger: 200 }}
+  items={[
+    {
+      title: 'Team Formation',
+      date: '2001',
+      description: 'FEDS201 was established as one of the pioneering FRC teams in Michigan.',
+      icon: '🏁',
+      tags: ['Foundation', 'History']
+    },
+    {
+      title: 'First Regional Win',
+      date: '2005',
+      description: 'Won our first regional championship, establishing excellence as our standard.',
+      icon: '🏆',
+      tags: ['Achievement', 'Competition']
+    },
+    {
+      title: 'Innovation Era',
+      date: '2010',
+      description: 'Began developing advanced scouting systems and data analytics platforms.',
+      icon: '💡',
+      tags: ['Innovation', 'Technology']
+    },
+    {
+      title: 'Digital Transformation',
+      date: '2020',
+      description: 'Launched comprehensive digital handbook and modern web infrastructure.',
+      icon: '🚀',
+      tags: ['Digital', 'Modern']
+    },
+    {
+      title: 'AI Integration',
+      date: '2024',
+      description: 'Implementing machine learning for predictive match analysis and strategy.',
+      icon: '🤖',
+      tags: ['AI', 'Future'],
+      link: { text: 'Learn More', href: '/Programming/Software' }
+    }
+  ]}
+/>
 
 ## Team Structure & Sub-teams
 

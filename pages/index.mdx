@@ -1,21 +1,35 @@
-import { Cards, Card } from 'nextra/components'
-import { FaCode, FaExpeditedssl, FaPlug, FaCube, FaRegLightbulb, FaBuildingShield, FaRocket, FaTrophy, FaUsers, FaGear, FaStar, FaChartLine } from "react-icons/fa6";
-import {ImCogs} from "react-icons/im";
-import {FaRobot} from "react-icons/fa";
-import Head from 'next/head';
-import { useState, useEffect } from 'react'
-import Link from 'next/link'
-import { useTheme } from 'nextra-theme-docs'
-import { HeroSection, ModernCard, StatsSection } from '../components'
+import { Cards, Card } from "nextra/components";
+import {
+  FaCode,
+  FaExpeditedssl,
+  FaPlug,
+  FaCube,
+  FaRegLightbulb,
+  FaBuildingShield,
+  FaRocket,
+  FaTrophy,
+  FaUsers,
+  FaGear,
+  FaStar,
+  FaChartLine,
+} from "react-icons/fa6";
+import { ImCogs } from "react-icons/im";
+import { FaRobot } from "react-icons/fa";
+import Head from "next/head";
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import { useTheme } from "nextra-theme-docs";
+import { ModernCard, GenericStats } from "../Components/index";
 
+# Welcome to the FEDS Operational Manual
 
-# Welcome to the Future of Robotics Excellence
+This is the official operational manual for FEDS 201, your go-to resource for everything related to our team. Whether you're a new member or a seasoned veteran, this manual is designed to help you navigate our processes, tools, and culture.
 
 {/* <HeroSection /> */}
 
 ## 🚀 Our Subgroups
 
-Discover the specialized teams that make FEDS 201 a championship-winning organization. Each subgroup represents a crucial aspect of modern robotics excellence.
+Discover the dedicated teams within FEDS 201, each contributing to a different aspect of robotics mastery and innovation.
 
 <div style={{
   display: 'grid',
@@ -27,61 +41,96 @@ Discover the specialized teams that make FEDS 201 a championship-winning organiz
   icon={<FaCode />}
   title="Programming"
   description="Explore two powerful wings of the Programming team: FRC  and Software. Learn how we build, organize, and maintain our robot’s codebase using Java and WPILib, while also diving into web technologies that power our custom scouting platform. Master programming languages and tools that make data-driven robotics possible."
-  link="/Programming"
-  gradient="linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
-  delay={0}
+  href="/Programming"
+  gradient="linear-gradient(135deg, #667eea 0%,#764ba2 100%)"
+  customStyles={{ backgroundColor: 'rgba(54, 98, 180, 0.26)', color: 'white', boxShadow: '0 4px 8px rgba(255, 255, 255, 0.1)' }}
 />
 
 <ModernCard
   icon={<FaPlug />}
   title="Electrical Systems"
   description="Understand how power flows through the robot. Dive into wiring best practices, sensor integration, power management, and safety standards. This section teaches how to bring a robot to life—reliably and safely—through clean, efficient electrical work."
-  link="/Electrical/Tools&Setup"
+  href="/Electrical/Tools&Setup"
   gradient="linear-gradient(135deg, #f59e0b 0%, #d97706 100%)"
-  delay={100}
+  customStyles={{
+    backgroundColor: "rgba(54, 98, 180, 0.26)",
+    color: "white",
+    boxShadow: "0 4px 8px rgba(255, 255, 255, 0.1)",
+  }}
 />
 
 <ModernCard
   icon={<FaCube />}
   title="CAD & Design"
   description="Get started with Onshape and explore everything a CAD designer needs to succeed—from 3D modeling and mechanical layout to design reviews and manufacturing drawings. Learn the skills to translate imagination into engineered reality."
-  link="/CAD/Introduction"
+  href="/CAD/Introduction"
   gradient="linear-gradient(135deg, #10b981 0%, #059669 100%)"
-  delay={200}
+  customStyles={{
+    backgroundColor: "rgba(54, 98, 180, 0.26)",
+    color: "white",
+    boxShadow: "0 4px 8px rgba(255, 255, 255, 0.1)",
+  }}
 />
 
 <ModernCard
   icon={<ImCogs />}
   title="Mechanical Engineering"
   description="Welcome to the Mechanical Subgroup of FEDS201! This section includes design resources, tool guides, project logs, and lessons learned. From alignment issues to tool wear, dive deep into real-world mechanical problem-solving and documentation of past builds and assemblies."
-  link="/Mechanical/Index"
+  href="/Mechanical/Index"
   gradient="linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%)"
-  delay={300}
+  customStyles={{
+    backgroundColor: "rgba(54, 98, 180, 0.26)",
+    color: "white",
+    boxShadow: "0 4px 8px rgba(255, 255, 255, 0.1)",
+  }}
 />
 
 <ModernCard
   icon={<FaRegLightbulb />}
   title="Strategy & Scouting"
   description="Explore the evolution of FEDS201’s scouting systems—from the Paper Era to our advanced digital platforms. Learn how we collect data, analyze performance, and build match-winning strategies. Includes historical archives, technical documents, and our custom scouting tools."
-  link="/Strategy/Tools&Setup"
+  href="/Strategy/Tools&Setup"
   gradient="linear-gradient(135deg, #06b6d4 0%, #0891b2 100%)"
-  delay={400}
+  customStyles={{
+    backgroundColor: "rgba(54, 98, 180, 0.26)",
+    color: "white",
+    boxShadow: "0 4px 8px rgba(255, 255, 255, 0.1)",
+  }}
 />
 
 <ModernCard
   icon={<FaBuildingShield />}
   title="People & Culture"
   description="Discover the heartbeat of FEDS201: Safety, Outreach, Business, Advocacy, Fundraising, and Team Culture. This section houses resources that empower leadership, promote STEM initiatives, and shape a strong, inclusive team identity."
-  link="/PandC/Index"
+  href="/PandC/Index"
   gradient="linear-gradient(135deg, #ef4444 0%, #dc2626 100%)"
-  delay={500}
+  customStyles={{
+    backgroundColor: "rgba(54, 98, 180, 0.26)",
+    color: "white",
+    boxShadow: "0 4px 8px rgba(255, 255, 255, 0.1)",
+  }}
 />
 
 </div>
 
-<StatsSection />
+## 🚀 Celebrating a Legacy of Innovation and Impact
 
-## 🏆 Championship Experiences
+From years of excellence to transforming student futures, here’s a quick look at our journey so far.
+
+<GenericStats
+  layout="grid"
+  variant="gradient"
+  countUp={true}
+  animation={{ enabled: true, duration: 2000, delay: 100 }}
+  stats={[
+    { value: 28, label: "Years of Excellence", icon: "🏆", suffix: "+" },
+    { value: 1000, label: "Students Impacted", icon: "👥", suffix: "+" },
+    { value: 7, label: "Competitions Won", icon: "🥇", suffix: "+" },
+    { value: 12, label: "Blue Banners", icon: "🏆" },
+  ]}
+/>
+
+## 🏆 Competition Experiences
 
 Learn from our championship journey and discover what it takes to compete at the highest level.
 
@@ -92,50 +141,63 @@ Learn from our championship journey and discover what it takes to compete at the
   margin: '60px 0'
 }}>
   <ModernCard
-    icon={<FaTrophy />}
+    icon={<FaTrophy/>}
+    bgPattern="waves"
     title="2025 Season Journey"
     description="Follow our weekly progression through the 2025 season. Detailed insights into our design process, challenges overcome, and lessons learned."
-    link="/Experiences/2025"
+    href="/Experiences/2025"
     gradient="linear-gradient(135deg, #f59e0b 0%, #d97706 100%)"
-    delay={0}
-  />
-  
+    customStyles={{ color: 'white', boxShadow: '0 -10px 20px rgba(255, 255, 255, 0.3)' }}
+
+/>
+
   <ModernCard
-    icon={<FaRobot />}
+    icon={<FaRobot/>}
+    bgPattern="waves"
     title="Robot Safety System"
     description="Comprehensive safety protocols and systems that ensure safe robot operation in all environments. Industry-leading safety standards."
-    link="/Experiences/RSS"
+    href="/Experiences/RSS"
     gradient="linear-gradient(135deg, #ef4444 0%, #dc2626 100%)"
-    delay={100}
-  />
-  
+    customStyles={{ color: 'white', boxShadow: '0 -10px 20px rgba(255, 255, 255, 0.3)' }}
+
+/>
+
   <ModernCard
-    icon={<FaGear />}
+    icon={<FaGear/>}
+    bgPattern="waves"
     title="Advanced Robot Design"
     description="Deep dive into our robot design methodology, from concept to championship performance. Engineering excellence in every component."
-    link="/Experiences/Robot_Design/robotDesign"
+    href="/Experiences/Robot_Design/robotDesign"
     gradient="linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%)"
-    delay={200}
-  />
+    customStyles={{ color: 'white', boxShadow: '0 -10px 20px rgba(255, 255, 255, 0.3)' }}
+
+/>
+
 </div>
 
 ## 📚 Essential Knowledge Base
 
 Master the fundamentals every FEDS member needs to know for success.
 
-<div style={{
-  display: 'grid',
-  gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))',
-  gap: '32px',
-  margin: '60px 0'
-}}>
+<div
+  style={{
+    display: "grid",
+    gridTemplateColumns: "repeat(auto-fit, minmax(400px, 1fr))",
+    gap: "32px",
+    margin: "60px 0",
+  }}
+>
   <ModernCard
-    icon={<FaUsers />}
     title="FEDS Handbook"
     description="The complete guide to everything you need to know as a FEDS member. Team structure, culture, tools, and resources for success."
-    link="/FEDSHandbook"
+    href="/FEDSHandbook"
     gradient="linear-gradient(135deg, #06b6d4 0%, #0891b2 100%)"
-    delay={0}
+    icon={<FaUsers />}
+    customStyles={{
+      backgroundColor: "rgba(54, 98, 180, 0.26)",
+      color: "white",
+      boxShadow: "0 4px 8px rgba(255, 255, 255, 0.1)",
+    }}
   />
 </div>
 
@@ -143,58 +205,72 @@ Master the fundamentals every FEDS member needs to know for success.
 
 Leading the way in environmentally responsible robotics through innovation and conscious engineering practices.
 
-<div style={{
-  background: 'linear-gradient(135deg, #10b981 0%, #059669 100%)',
-  borderRadius: '32px',
-  padding: '60px 40px',
-  margin: '80px 0',
-  color: 'white',
-  textAlign: 'center',
-  position: 'relative',
-  overflow: 'hidden'
-}}>
-  <div style={{
-    position: 'absolute',
-    top: '10px',
-    right: '20px',
-    fontSize: '120px',
-    opacity: '0.1'
-  }}>
+<div
+  style={{
+    background: "linear-gradient(135deg, #10b981 0%, #059669 100%)",
+    borderRadius: "32px",
+    padding: "60px 40px",
+    margin: "80px 0",
+    color: "white",
+    textAlign: "center",
+    position: "relative",
+    overflow: "hidden",
+  }}
+>
+  <div
+    style={{
+      position: "absolute",
+      top: "10px",
+      right: "20px",
+      fontSize: "120px",
+      opacity: "0.1",
+    }}
+  >
     🌱
   </div>
-  
-  <h2 style={{
-    fontSize: 'clamp(28px, 4vw, 40px)',
-    fontWeight: '800',
-    marginBottom: '24px'
-  }}>
+
+  <h2
+    style={{
+      fontSize: "clamp(28px, 4vw, 40px)",
+      fontWeight: "800",
+      marginBottom: "24px",
+    }}
+  >
     Environmental Leadership Initiative
   </h2>
-  <p style={{
-    fontSize: '18px',
-    marginBottom: '40px',
-    opacity: '0.95',
-    maxWidth: '800px',
-    margin: '0 auto 40px'
-  }}>
-    Inspired by FRC rule G201, we're pioneering sustainable robotics practices. Our mission: cultivate environmental consciousness while maintaining championship performance.
+  <p
+    style={{
+      fontSize: "18px",
+      marginBottom: "40px",
+      opacity: "0.95",
+      maxWidth: "800px",
+      margin: "0 auto 40px",
+    }}
+  >
+    Inspired by FRC rule G201, we're pioneering sustainable robotics practices.
+    Our mission: cultivate environmental consciousness while maintaining
+    championship performance.
   </p>
-  
-  <div style={{
-    display: 'inline-flex',
-    alignItems: 'center',
-    gap: '16px',
-    background: 'rgba(255, 255, 255, 0.2)',
-    padding: '20px 32px',
-    borderRadius: '16px',
-    backdropFilter: 'blur(10px)',
-    border: '1px solid rgba(255, 255, 255, 0.3)',
-    cursor: 'pointer',
-    transition: 'all 0.3s ease'
-  }}
-  onClick={() => window.open('https://feds201.github.io/G201-Calculator/', '_blank')}>
+
+  <div
+    style={{
+      display: "inline-flex",
+      alignItems: "center",
+      gap: "16px",
+      background: "rgba(255, 255, 255, 0.2)",
+      padding: "20px 32px",
+      borderRadius: "16px",
+      backdropFilter: "blur(10px)",
+      border: "1px solid rgba(255, 255, 255, 0.3)",
+      cursor: "pointer",
+      transition: "all 0.3s ease",
+    }}
+    onClick={() =>
+      window.open("https://feds201.github.io/G201-Calculator/", "_blank")
+    }
+  >
     <FaChartLine size={24} />
-    <span style={{ fontWeight: '600', fontSize: '18px' }}>
+    <span style={{ fontWeight: "600", fontSize: "18px" }}>
       Launch G201 Impact Calculator
     </span>
   </div>
@@ -202,90 +278,103 @@ Leading the way in environmentally responsible robotics through innovation and c
 
 ---
 
-<div style={{
-  textAlign: 'center',
-  padding: '80px 40px',
-  background: 'linear-gradient(135deg, #1e293b 0%, #0f172a 100%)',
-  borderRadius: '32px',
-  color: 'white',
-  margin: '80px 0',
-  position: 'relative',
-  overflow: 'hidden'
-}}>
-  <div style={{
-    position: 'absolute',
-    top: '20px',
-    left: '20px',
-    fontSize: '100px',
-    opacity: '0.1'
-  }}>
+<div
+  style={{
+    textAlign: "center",
+    padding: "80px 40px",
+    background: "linear-gradient(135deg, #1e293b 0%, #0f172a 100%)",
+    borderRadius: "32px",
+    color: "white",
+    margin: "80px 0",
+    position: "relative",
+    overflow: "hidden",
+  }}
+>
+  <div
+    style={{
+      position: "absolute",
+      top: "20px",
+      left: "20px",
+      fontSize: "100px",
+      opacity: "0.1",
+    }}
+  >
     🚀
   </div>
-  
-  <h2 style={{
-    fontSize: 'clamp(36px, 6vw, 56px)',
-    fontWeight: '800',
-    marginBottom: '24px',
-    textShadow: '0 4px 8px rgba(0, 0, 0, 0.3)'
-  }}>
+
+  <h2
+    style={{
+      fontSize: "clamp(36px, 6vw, 56px)",
+      fontWeight: "800",
+      marginBottom: "24px",
+      textShadow: "0 4px 8px rgba(0, 0, 0, 0.3)",
+    }}
+  >
     Ready to Build Knowledge?
   </h2>
-  <p style={{
-    fontSize: 'clamp(18px, 2.5vw, 22px)',
-    opacity: '0.9',
-    marginBottom: '48px',
-    maxWidth: '700px',
-    margin: '0 auto 48px',
-    lineHeight: '1.6'
-  }}>
-    Join the legacy of innovation, excellence, and performance. Your journey to robotics mastery starts here.
+  <p
+    style={{
+      fontSize: "clamp(18px, 2.5vw, 22px)",
+      opacity: "0.9",
+      marginBottom: "48px",
+      maxWidth: "700px",
+      margin: "0 auto 48px",
+      lineHeight: "1.6",
+    }}
+  >
+    Join the legacy of innovation, excellence, and performance. Your journey to
+    robotics mastery starts here.
   </p>
-  
-  <div style={{
-    display: 'flex',
-    gap: '24px',
-    justifyContent: 'center',
-    flexWrap: 'wrap'
-  }}>
+
+  <div
+    style={{
+      display: "flex",
+      gap: "24px",
+      justifyContent: "center",
+      flexWrap: "wrap",
+    }}
+  >
     <Link href="/Programming">
-      <div style={{
-        display: 'inline-flex',
-        alignItems: 'center',
-        gap: '16px',
-        background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-        padding: '20px 40px',
-        borderRadius: '16px',
-        fontWeight: '600',
-        fontSize: '18px',
-        textDecoration: 'none',
-        color: 'white',
-        transition: 'all 0.3s ease',
-        cursor: 'pointer',
-        boxShadow: '0 8px 16px -4px rgba(102, 126, 234, 0.4)'
-      }}>
-      
+      <div
+        style={{
+          display: "inline-flex",
+          alignItems: "center",
+          gap: "16px",
+          background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+          padding: "20px 40px",
+          borderRadius: "16px",
+          fontWeight: "600",
+          fontSize: "18px",
+          textDecoration: "none",
+          color: "white",
+          transition: "all 0.3s ease",
+          cursor: "pointer",
+          boxShadow: "0 8px 16px -4px rgba(102, 126, 234, 0.4)",
+        }}
+      >
         Start Your Journey
       </div>
     </Link>
-    
+
     <Link href="/FEDSHandbook">
-      <div style={{
-        display: 'inline-flex',
-        alignItems: 'center',
-        gap: '16px',
-        background: 'rgba(255, 255, 255, 0.1)',
-        padding: '20px 40px',
-        borderRadius: '16px',
-        fontWeight: '600',
-        fontSize: '18px',
-        textDecoration: 'none',
-        color: 'white',
-        transition: 'all 0.3s ease',
-        cursor: 'pointer',
-        border: '1px solid rgba(255, 255, 255, 0.2)',
-        backdropFilter: 'blur(10px)'
-      }}>
-       
+      <div
+        style={{
+          display: "inline-flex",
+          alignItems: "center",
+          gap: "16px",
+          background: "rgba(255, 255, 255, 0.1)",
+          padding: "20px 40px",
+          borderRadius: "16px",
+          fontWeight: "600",
+          fontSize: "18px",
+          textDecoration: "none",
+          color: "white",
+          transition: "all 0.3s ease",
+          cursor: "pointer",
+          border: "1px solid rgba(255, 255, 255, 0.2)",
+          backdropFilter: "blur(10px)",
+        }}
+      >
         Team Handbook
       </div>
     </Link>

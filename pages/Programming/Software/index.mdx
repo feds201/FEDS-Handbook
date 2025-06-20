@@ -1,7 +1,7 @@
 import {Callout} from 'nextra/components';
 import Head from 'next/head';
 import { Cards, Card } from 'nextra/components';
-import { ProgrammingHero, SoftwareStats, SoftwareTechStack, SoftwareSkillsMatrix, SoftwarePath, SoftwareBenefitCard, SoftwareProjectsDemo } from '../../../components';
+import { GenericHero, GenericStats, GenericGrid, GenericCard, GenericWidget } from '../../../Components';
 
 <Head>
     <title>Software Wing Excellence - FEDS201</title>
@@ -9,7 +9,31 @@ import { ProgrammingHero, SoftwareStats, SoftwareTechStack, SoftwareSkillsMatrix
     <meta property="og:description" content="Build the digital infrastructure that powers championship robotics - from web apps to AI analytics" />
 </Head>
 
-<ProgrammingHero />
+<GenericHero 
+  title="Software Wing Excellence"
+  subtitle="Build the digital infrastructure that powers championship robotics - from web apps to AI analytics"
+  variant="gradient"
+  size="large"
+  codeExamples={[
+    {
+      title: "Data Analysis",
+      code: `const predictions = await model.predict({
+  teamPerformance: historicalData,
+  matchContext: currentMatch,
+  allianceComposition: partners
+});`,
+      language: "javascript"
+    },
+    {
+      title: "Real-time Analytics", 
+      code: `const liveData = supabase
+  .from('match_data')
+  .on('*', handleRealTimeUpdate)
+  .subscribe();`,
+      language: "javascript"
+    }
+  ]}
+/>
 
 <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 20px' }}>
 
@@ -19,58 +43,166 @@ import { ProgrammingHero, SoftwareStats, SoftwareTechStack, SoftwareSkillsMatrix
 
 Software Wing programming isn't just about building applications—it's about creating the digital ecosystem that gives our team competitive advantage. You'll develop strategic tools, analytics platforms, and infrastructure systems that support every aspect of our robotics program, from scouting to match prediction.
 
-<SoftwareStats />
+<GenericStats 
+  title="Software by the Numbers"
+  subtitle="Understanding the scale and performance of our digital systems"
+  stats={[
+    { value: '95%', label: 'Prediction Accuracy', icon: '🎯', description: 'AI match prediction success rate' },
+    { value: '10M+', label: 'Data Points', icon: '📊', description: 'Competition data processed annually' },
+    { value: '500ms', label: 'API Response', icon: '⚡', description: 'Average database query time' },
+    { value: '24/7', label: 'Uptime', icon: '☁️', description: 'Cloud infrastructure availability' }
+  ]}
+  variant="minimal"
+/>
 
 ## Why Software Wing Matters
 
-<div style={{
-  display: 'grid',
-  gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-  gap: '24px',
-  margin: '40px 0'
-}}>
-
-<SoftwareBenefitCard 
-  icon="🚀"
-  title="Strategic Advantage"
-  description="Build analytics and prediction systems that give our team the competitive edge in alliance selection and match strategy."
+<GenericGrid 
+  columns={2}
+  gap="large"
+  items={[
+    {
+      icon: "🚀",
+      title: "Strategic Advantage",
+      description: "Build analytics and prediction systems that give our team the competitive edge in alliance selection and match strategy.",
+      accent: "blue"
+    },
+    {
+      icon: "📊",
+      title: "Data-Driven Decisions", 
+      description: "Transform raw competition data into actionable insights using machine learning and advanced analytics.",
+      accent: "green"
+    },
+    {
+      icon: "🌐",
+      title: "Digital Infrastructure",
+      description: "Create scalable web platforms, mobile apps, and cloud systems that support team operations year-round.",
+      accent: "purple"
+    },
+    {
+      icon: "🤖",
+      title: "AI & Automation",
+      description: "Develop intelligent systems for scouting automation, performance prediction, and strategic optimization.",
+      accent: "orange"
+    }
+  ]}
 />
-
-<SoftwareBenefitCard 
-  icon="📊"
-  title="Data-Driven Decisions"
-  description="Transform raw competition data into actionable insights using machine learning and advanced analytics."
-/>
-
-<SoftwareBenefitCard 
-  icon="🌐"
-  title="Digital Infrastructure"
-  description="Create scalable web platforms, mobile apps, and cloud systems that support team operations year-round."
-/>
-
-<SoftwareBenefitCard 
-  icon="🤖"
-  title="AI & Automation"
-  description="Develop intelligent systems for scouting automation, performance prediction, and strategic optimization."
-/>
-
-</div>
 
 ## Software Development Fundamentals
 
 ### The Software Wing Technology Stack
 
-<SoftwareTechStack />
+### The Software Wing Technology Stack
 
-<SoftwareSkillsMatrix />
+<GenericWidget 
+  title="Technology Stack"
+  variant="techStack"
+  data={{
+    categories: [
+      {
+        name: "Frontend",
+        icon: "🎨",
+        technologies: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Flutter"]
+      },
+      {
+        name: "Backend", 
+        icon: "⚙️",
+        technologies: ["Node.js", "Express", "Python", "FastAPI", "Supabase"]
+      },
+      {
+        name: "Data & AI",
+        icon: "🧠", 
+        technologies: ["Python", "pandas", "scikit-learn", "TensorFlow", "PostgreSQL"]
+      },
+      {
+        name: "DevOps",
+        icon: "☁️",
+        technologies: ["Docker", "GitHub Actions", "Vercel", "Firebase", "AWS"]
+      }
+    ]
+  }}
+/>
+
+<GenericWidget 
+  title="Skills Development Matrix"
+  variant="skillsMatrix"
+  data={{
+    skills: [
+      { name: "JavaScript/TypeScript", beginner: "Variables, Functions", intermediate: "React, Async/Await", advanced: "Performance Optimization" },
+      { name: "Python", beginner: "Syntax, Data Types", intermediate: "pandas, APIs", advanced: "Machine Learning" },
+      { name: "Web Development", beginner: "HTML, CSS", intermediate: "React, REST APIs", advanced: "Full-Stack Architecture" },
+      { name: "Data Science", beginner: "Statistics Basics", intermediate: "Data Visualization", advanced: "Predictive Modeling" },
+      { name: "Mobile Development", beginner: "Flutter Basics", intermediate: "State Management", advanced: "Native Integration" }
+    ]
+  }}
+/>
 
 ## Your Software Journey
 
-<SoftwarePath />
+<GenericWidget 
+  title="Learning Path"
+  variant="learningPath"
+  data={{
+    phases: [
+      {
+        title: "Foundation",
+        duration: "2-4 weeks",
+        skills: ["Programming fundamentals", "Git version control", "Basic web development"],
+        projects: ["Personal website", "Simple calculator app"]
+      },
+      {
+        title: "Development",
+        duration: "4-8 weeks", 
+        skills: ["React development", "API integration", "Database basics"],
+        projects: ["Team dashboard", "Data visualization tool"]
+      },
+      {
+        title: "Specialization",
+        duration: "8-12 weeks",
+        skills: ["Advanced frameworks", "Machine learning", "Cloud deployment"],
+        projects: ["Scouting app", "Match prediction system"]
+      },
+      {
+        title: "Mastery",
+        duration: "Ongoing",
+        skills: ["System architecture", "Performance optimization", "Team leadership"],
+        projects: ["Complete platform", "Open source contributions"]
+      }
+    ]
+  }}
+/>
 
 ## Interactive Project Exploration
 
-<SoftwareProjectsDemo />
+<GenericWidget 
+  title="Software Projects Portfolio"
+  variant="projectsDemo"
+  data={{
+    projects: [
+      {
+        name: "Scout Ops Suite",
+        description: "Comprehensive scouting and match analysis platform",
+        tech: ["React", "Supabase", "Python"],
+        impact: "95% prediction accuracy",
+        status: "Production"
+      },
+      {
+        name: "Team Dashboard",
+        description: "Real-time team performance and resource management",
+        tech: ["Next.js", "Firebase", "TypeScript"],
+        impact: "50% efficiency increase",
+        status: "Active"
+      },
+      {
+        name: "Mobile Scouting",
+        description: "Cross-platform mobile app for competition scouting",
+        tech: ["Flutter", "Dart", "Cloud Sync"],
+        impact: "100% offline capability",
+        status: "Beta"
+      }
+    ]
+  }}
+/>
 
 <Callout type="info" emoji="💡">
 **Pro Tip**: Start with our web development fundamentals if you're new to software engineering, or dive into data science if you have programming experience. Every great software engineer started with their first "Hello, World!"

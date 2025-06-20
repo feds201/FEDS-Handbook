@@ -1,393 +1,79 @@
 import {Callout} from 'nextra/components';
 import Head from 'next/head';
 import { Cards, Card } from 'nextra/components';
-import { GenericHero, GenericStats, GenericGrid, GenericCard, GenericWidget } from '../../../Components';
+import { GenericHero, GenericStats, GenericGrid, GenericWidget} from '../../../Components/index';
 
 <Head>
-    <title>Software Wing Excellence - FEDS201</title>
-    <meta property="og:title" content="Software Wing Excellence - FEDS201" key="title" />
-    <meta property="og:description" content="Build the digital infrastructure that powers championship robotics - from web apps to AI analytics" />
+    <title>Programming Excellence - FEDS201</title>
+    <meta property="og:title" content="Programming Excellence - FEDS201" key="title" />
+    <meta property="og:description" content="Master FRC robot programming with our comprehensive guide - from Java fundamentals to advanced autonomous systems" />
 </Head>
-
 <GenericHero 
-  title="Software Wing Excellence"
-  subtitle="Build the digital infrastructure that powers championship robotics - from web apps to AI analytics"
-  variant="gradient"
-  size="large"
-  codeExamples={[
-    {
-      title: "Data Analysis",
-      code: `const predictions = await model.predict({
-  teamPerformance: historicalData,
-  matchContext: currentMatch,
-  allianceComposition: partners
-});`,
-      language: "javascript"
-    },
-    {
-      title: "Real-time Analytics", 
-      code: `const liveData = supabase
-  .from('match_data')
-  .on('*', handleRealTimeUpdate)
-  .subscribe();`,
-      language: "javascript"
-    }
-  ]}
+  title="FRC Wing"
+  backgroundType='gradient'
+  height="sm"
+  description='Master FRC robot programming with our comprehensive guide - from Java fundamentals to advanced autonomous systems'
+  backgroundValue='linear-gradient(to right,rgb(0, 55, 128), rgba(255, 0, 0, 0.62))'
+  textAlign='center'
 />
 
 <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 20px' }}>
 
-# Welcome to Software Wing Excellence
+# Welcome to FRC Wing
+<strong> Where Code Meets Competition</strong>
 
-**Where Code Powers Strategy**
+FRC programming isn’t just about writing code. It’s about breathing life into machines, making decisions faster than your Wi-Fi, and building a robot that doesn’t just move—but flexes on the competition. At FEDS 201, our programmers are the unsung heroes, turning caffeine into code, bugs into features, and chaos into (mostly) functional robots.
 
-Software Wing programming isn't just about building applications—it's about creating the digital ecosystem that gives our team competitive advantage. You'll develop strategic tools, analytics platforms, and infrastructure systems that support every aspect of our robotics program, from scouting to match prediction.
+<br />
 
-<GenericStats 
-  title="Software by the Numbers"
-  subtitle="Understanding the scale and performance of our digital systems"
+<GenericStats
+  layout="grid"
+  variant="gradient"
+  countUp={true}
+  animation={{ enabled: true, duration: 2000, delay: 100 }}
   stats={[
-    { value: '95%', label: 'Prediction Accuracy', icon: '🎯', description: 'AI match prediction success rate' },
-    { value: '10M+', label: 'Data Points', icon: '📊', description: 'Competition data processed annually' },
-    { value: '500ms', label: 'API Response', icon: '⚡', description: 'Average database query time' },
-    { value: '24/7', label: 'Uptime', icon: '☁️', description: 'Cloud infrastructure availability' }
-  ]}
-  variant="minimal"
-/>
-
-## Why Software Wing Matters
-
-<GenericGrid 
-  columns={2}
-  gap="large"
-  items={[
-    {
-      icon: "🚀",
-      title: "Strategic Advantage",
-      description: "Build analytics and prediction systems that give our team the competitive edge in alliance selection and match strategy.",
-      accent: "blue"
-    },
-    {
-      icon: "📊",
-      title: "Data-Driven Decisions", 
-      description: "Transform raw competition data into actionable insights using machine learning and advanced analytics.",
-      accent: "green"
-    },
-    {
-      icon: "🌐",
-      title: "Digital Infrastructure",
-      description: "Create scalable web platforms, mobile apps, and cloud systems that support team operations year-round.",
-      accent: "purple"
-    },
-    {
-      icon: "🤖",
-      title: "AI & Automation",
-      description: "Develop intelligent systems for scouting automation, performance prediction, and strategic optimization.",
-      accent: "orange"
-    }
+    { value: 14, label: "Days to Full Subsystem Code 🧠 — Fueled by coffee and questionable life choices." },
+    { value: 500, label: "Programming Hours Logged 💻 — Grass was touched (virtually).", suffix: "+" },
+    { value: 1200, label: "Lines of Handwritten Code ✍️ — Every semicolon tells a story.", suffix: "+" },
+    { value: 8, label: "Subsystems Integrated 🔧 — Like duct-taping lawnmowers into a spaceship." },
+    { value: 3, label: "Reusable Code Templates ♻️ — Ctrl+C, Ctrl+V, engineering at its finest." },
+    { value: 1, label: "Swerve Generator Used ⚙️ — Because reinventing the wheel is overrated." },
+    { value: 100, label: "CAD-Based Code Tweaks 📐 — Mechanical team: the gift that keeps on giving (plot twists).", suffix: "+" },
+    { value: 20, label: "Late Nights Debugging 🌙 — Staring into the void until the robot obeys.", suffix: "+" },
+    { value: 7, label: "Auto Modes Created 🤖 — The robot now dreams in trajectories." },
+    { value: 42, label: "Merge Conflicts Resolved 🔀 — Git turned coding into boss fights." },
+    { value: 69, label: "Build Errors Caused by One Missing Bracket 🧱 — Still blaming the compiler." },
+    { value: 1337, label: "Debug Prints Deployed 🐞 — Console.log: the unsung MVP.", suffix: "+" },
+    { value: 1, label: "Programmers Who Swore Never to Touch Code Again 😤 — Until next season." },
+    { value: 6, label: "Panic Deploys Before Matches 🚨 — Ctrl+S, Ctrl+B, Ctrl+Pray." },
+    { value: 2, label: "Robots Possessed by Gremlins 👻 — We don’t talk about Week 3." }
   ]}
 />
 
-## Software Development Fundamentals
+## 🔥 What You'll Learn in the FRC Wing
+<p>
+  Welcome, brave coder. If you're reading this, congratulations — you're officially in too deep. But hey, here's the good news: by the end of this, you'll be the reason the robot actually moves (and maybe even in the right direction).
+</p>
 
-### The Software Wing Technology Stack
-
-### The Software Wing Technology Stack
-
-<GenericWidget 
-  title="Technology Stack"
-  variant="techStack"
-  data={{
-    categories: [
-      {
-        name: "Frontend",
-        icon: "🎨",
-        technologies: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Flutter"]
-      },
-      {
-        name: "Backend", 
-        icon: "⚙️",
-        technologies: ["Node.js", "Express", "Python", "FastAPI", "Supabase"]
-      },
-      {
-        name: "Data & AI",
-        icon: "🧠", 
-        technologies: ["Python", "pandas", "scikit-learn", "TensorFlow", "PostgreSQL"]
-      },
-      {
-        name: "DevOps",
-        icon: "☁️",
-        technologies: ["Docker", "GitHub Actions", "Vercel", "Firebase", "AWS"]
-      }
-    ]
-  }}
+<GenericStats
+  layout="grid"
+  variant="compact"
+  countUp={true}
+  stats={[
+    { value: "🚀", label: "Java for FRC", description: "Learn to code in Java. You’ll write methods, classes, and accidentally create infinite loops at 3AM." },
+    { value: "🧠", label: "Subsystem Architecture", description: "Split your code like a modular pizza. Subsystems, commands, triggers — it’s object-oriented programming on steroids." },
+    { value: "🎮", label: "Controller Mapping", description: "Map buttons to actions, and occasionally to chaos. Left bumper will probably do something you didn’t expect." },
+    { value: "🛠", label: "Debugging Strategies", description: "Cry into `System.out.println()`. Stack traces, null pointers, and 'why does it only fail when the judges are watching?'" },
+    { value: "🤖", label: "Autonomous Routines", description: "Make the robot do cool stuff without touching it. When it works, it’s magic. When it doesn’t, it’s a feature." },
+    { value: "📦", label: "Git & Version Control", description: "Learn how to git push --force and pray. Also, how to recover from that prayer." },
+    { value: "🧪", label: "Simulation & Tuning", description: "Run your robot in simulation because driving into walls IRL is frowned upon." },
+    { value: "📐", label: "CAD-Driven Adaptation", description: "Turn last-minute mechanical changes into last-minute code commits. We stay flexible. Like spaghetti." }
+  ]}
 />
 
-<GenericWidget 
-  title="Skills Development Matrix"
-  variant="skillsMatrix"
-  data={{
-    skills: [
-      { name: "JavaScript/TypeScript", beginner: "Variables, Functions", intermediate: "React, Async/Await", advanced: "Performance Optimization" },
-      { name: "Python", beginner: "Syntax, Data Types", intermediate: "pandas, APIs", advanced: "Machine Learning" },
-      { name: "Web Development", beginner: "HTML, CSS", intermediate: "React, REST APIs", advanced: "Full-Stack Architecture" },
-      { name: "Data Science", beginner: "Statistics Basics", intermediate: "Data Visualization", advanced: "Predictive Modeling" },
-      { name: "Mobile Development", beginner: "Flutter Basics", intermediate: "State Management", advanced: "Native Integration" }
-    ]
-  }}
-/>
-
-## Your Software Journey
-
-<GenericWidget 
-  title="Learning Path"
-  variant="learningPath"
-  data={{
-    phases: [
-      {
-        title: "Foundation",
-        duration: "2-4 weeks",
-        skills: ["Programming fundamentals", "Git version control", "Basic web development"],
-        projects: ["Personal website", "Simple calculator app"]
-      },
-      {
-        title: "Development",
-        duration: "4-8 weeks", 
-        skills: ["React development", "API integration", "Database basics"],
-        projects: ["Team dashboard", "Data visualization tool"]
-      },
-      {
-        title: "Specialization",
-        duration: "8-12 weeks",
-        skills: ["Advanced frameworks", "Machine learning", "Cloud deployment"],
-        projects: ["Scouting app", "Match prediction system"]
-      },
-      {
-        title: "Mastery",
-        duration: "Ongoing",
-        skills: ["System architecture", "Performance optimization", "Team leadership"],
-        projects: ["Complete platform", "Open source contributions"]
-      }
-    ]
-  }}
-/>
-
-## Interactive Project Exploration
-
-<GenericWidget 
-  title="Software Projects Portfolio"
-  variant="projectsDemo"
-  data={{
-    projects: [
-      {
-        name: "Scout Ops Suite",
-        description: "Comprehensive scouting and match analysis platform",
-        tech: ["React", "Supabase", "Python"],
-        impact: "95% prediction accuracy",
-        status: "Production"
-      },
-      {
-        name: "Team Dashboard",
-        description: "Real-time team performance and resource management",
-        tech: ["Next.js", "Firebase", "TypeScript"],
-        impact: "50% efficiency increase",
-        status: "Active"
-      },
-      {
-        name: "Mobile Scouting",
-        description: "Cross-platform mobile app for competition scouting",
-        tech: ["Flutter", "Dart", "Cloud Sync"],
-        impact: "100% offline capability",
-        status: "Beta"
-      }
-    ]
-  }}
-/>
-
-<Callout type="info" emoji="💡">
-**Pro Tip**: Start with our web development fundamentals if you're new to software engineering, or dive into data science if you have programming experience. Every great software engineer started with their first "Hello, World!"
+<Callout type="info" title="Pro Tip">
+  Programming on an FRC team is 20% Java, 30% teamwork, and 50% convincing the robot it’s not haunted.
 </Callout>
 
-## Core Software Development Areas
-
-### 🌐 Web Development & Platforms
-Create powerful web applications that serve our team and the FRC community:
-- **Frontend Development**: React, Next.js, and modern UI frameworks
-- **Backend Systems**: Node.js, Express, and serverless architectures
-- **Database Design**: SQL, NoSQL, and data modeling
-- **Cloud Infrastructure**: Firebase, Supabase, and deployment strategies
-
-### 📱 Mobile Application Development
-Build cross-platform mobile solutions for competitions and team management:
-- **Flutter Development**: Cross-platform mobile apps with Dart
-- **Real-time Data Sync**: Live updates during competitions
-- **Offline Capability**: Apps that work without internet connectivity
-- **User Experience Design**: Intuitive interfaces for high-stress environments
-
-### 📊 Data Science & Analytics
-Transform competition data into strategic insights:
-- **Data Collection**: APIs, web scraping, and automated data pipelines
-- **Statistical Analysis**: Python, pandas, and data visualization
-- **Machine Learning**: Predictive models for match outcomes
-- **Performance Metrics**: Team and robot performance tracking
-
-### 🤖 AI & Machine Learning
-Develop intelligent systems for competitive advantage:
-- **Match Prediction**: AI models for outcome forecasting
-- **Scouting Automation**: Computer vision for automatic data collection
-- **Strategic Optimization**: Algorithm-driven alliance selection
-- **Natural Language Processing**: Automated report generation
-
-### ☁️ Cloud & Infrastructure
-Build scalable, reliable systems that support team operations:
-- **Cloud Platforms**: AWS, Google Cloud, Firebase deployment
-- **Database Management**: Real-time databases and data warehousing
-- **API Development**: RESTful and GraphQL service architectures
-- **DevOps Practices**: CI/CD, monitoring, and automated testing
-
-### 🔍 Competition Intelligence
-Create systems that provide strategic insights during competitions:
-- **Scout Ops Suite**: Comprehensive scouting and analytics platform
-- **Live Match Analysis**: Real-time data processing and visualization
-- **Alliance Strategy Tools**: Optimization algorithms for partner selection
-- **Performance Dashboards**: Executive-level insights for coaches
-
-## Quick Navigation
-
-<Cards>
-<Card 
-  title="🌐 Web Development" 
-  href="/Programming/Software/WebDevelopment"
-  description="Build modern web applications with React, Next.js, and cloud platforms"
-/>
-<Card 
-  title="📱 Mobile Development" 
-  href="/Programming/Software/MobileDevelopment"
-  description="Create cross-platform mobile apps with Flutter and Dart"
-/>
-<Card 
-  title="📊 Data Science" 
-  href="/Programming/Software/DataScience"
-  description="Analyze competition data and build predictive models"
-/>
-<Card 
-  title="🤖 AI & Machine Learning" 
-  href="/Programming/Software/MachineLearning"
-  description="Develop intelligent systems for competitive advantage"
-/>
-<Card 
-  title="☁️ Cloud Infrastructure" 
-  href="/Programming/Software/CloudInfrastructure"
-  description="Build scalable, reliable backend systems and APIs"
-/>
-<Card 
-  title="🔍 Scout Ops Suite" 
-  href="/Programming/Software/ScoutOps"
-  description="Master our comprehensive scouting and analytics platform"
-/>
-</Cards>
-
-## Advanced Topics
-
-### Full-Stack Architecture
-- **Microservices**: Scalable, distributed system design
-- **Real-time Systems**: WebSocket connections and live data streaming
-- **Performance Optimization**: Database indexing, caching, and CDNs
-- **Security Best Practices**: Authentication, authorization, and data protection
-
-### Data Engineering
-- **ETL Pipelines**: Extract, transform, and load competition data
-- **Data Warehousing**: Structured storage for historical analysis
-- **Stream Processing**: Real-time data processing during events
-- **API Integration**: Connect with FIRST's official APIs and third-party services
-
-### Machine Learning Operations
-- **Model Deployment**: Production ML systems and model serving
-- **A/B Testing**: Experimental framework for strategy validation
-- **Feature Engineering**: Data preprocessing and feature selection
-- **Model Monitoring**: Performance tracking and drift detection
-
-## Software Best Practices
-
-<Callout type="warning" emoji="⚠️">
-**Competition Reality Check**: Your applications will be used during high-stress competitions with unreliable internet. Design for resilience, offline capability, and graceful degradation.
-</Callout>
-
-### Development Standards
-- **Clean Code**: Write maintainable, readable, and testable code
-- **Version Control**: Git workflows and collaborative development
-- **Code Review**: Peer review process and quality gates
-- **Documentation**: API docs, user guides, and system architecture
-
-### Testing & Quality Assurance
-- **Unit Testing**: Comprehensive test coverage for all components
-- **Integration Testing**: End-to-end testing of complete workflows
-- **Performance Testing**: Load testing and optimization
-- **User Testing**: Validate interfaces with actual team members
-
-### Deployment & Operations
-- **Continuous Integration**: Automated testing and deployment pipelines
-- **Monitoring**: Application performance and error tracking
-- **Backup & Recovery**: Data protection and disaster recovery
-- **Scalability**: Systems that handle growing data and user loads
-
-## Competition Software Strategy
-
-### Event Preparation
-- **Data Pipeline Setup**: Automated collection of team and match data
-- **System Testing**: Validate all applications before competition
-- **Offline Capability**: Ensure critical functions work without internet
-- **Team Training**: Prepare users for competition software workflows
-
-### During Competition
-- **Real-time Analytics**: Live processing of match and scouting data
-- **Strategic Dashboards**: Executive decision support systems
-- **Alliance Analysis**: Rapid evaluation of potential partners
-- **Performance Tracking**: Monitor robot and team effectiveness
-
-### Post-Competition Analysis
-- **Data Aggregation**: Compile comprehensive event datasets
-- **Performance Reports**: Automated generation of insights and recommendations
-- **Model Validation**: Assess prediction accuracy and improve algorithms
-- **Strategic Planning**: Use insights to guide future development
-
-## Key Software Projects
-
-### Scout Ops Suite
-Our flagship scouting and analytics platform providing:
-- **Match Prediction**: AI-powered outcome forecasting
-- **Team Analytics**: Comprehensive performance tracking
-- **Alliance Optimization**: Strategic partner selection tools
-- **Real-time Dashboards**: Live competition intelligence
-
-### Mobile Scouting App
-Cross-platform mobile application featuring:
-- **Offline Data Collection**: Works without internet connectivity
-- **Real-time Sync**: Instant data sharing across devices
-- **Intuitive Interface**: Designed for high-stress competition environments
-- **Photo/Video Integration**: Visual scouting capabilities
-
-### Competition Dashboard
-Web-based command center providing:
-- **Live Match Tracking**: Real-time score and performance data
-- **Strategic Insights**: AI-generated recommendations
-- **Team Communication**: Coordination tools for coaching staff
-- **Historical Analysis**: Trend identification and pattern recognition
-
-## Your Next Steps
-
-1. **Assess Your Interests**: Determine if you prefer frontend, backend, data science, or AI
-2. **Choose Your Track**: Follow specialized learning paths based on your passion
-3. **Start Building**: Create real projects that solve actual team problems
-4. **Join the Ecosystem**: Contribute to existing projects and learn from the codebase
-5. **Stay Current**: Software moves fast - continuous learning is essential
-
-<Callout type="success" emoji="🎯">
-**Ready to Build?** Whether you're creating your first web app or training machine learning models, every software solution starts with understanding the problem. Focus on delivering value to your teammates.
-</Callout>
-
-**Remember**: Software development is about solving real problems for real people. While we'll teach you the technical skills, the most important ability is understanding user needs and delivering solutions that make a difference. Your code will directly impact our team's competitive success.
-
-Welcome to the Software Wing. Let's build the future of competitive robotics intelligence.
 
 </div>

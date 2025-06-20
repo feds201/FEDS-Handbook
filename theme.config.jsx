@@ -147,7 +147,7 @@ export default {
                 display: 'inline-block'
             }}>
                 <img
-                    src="./logo.png"
+                    src="https://i.imgur.com/9O6F2mo.png"
                     alt="FEDS201"
                     width="36"
                     height="36"

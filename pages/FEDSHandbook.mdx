@@ -6,7 +6,7 @@ import {
   GenericWidget,
   GenericTimeline,
   GenericNavigation
-} from '../Components';
+} from '../Components/index';
 
 # Rochester High School Robotics (FRC 201)
 
@@ -14,7 +14,13 @@ import {
 
 **REVISED 8/10/23**
 
-<EnhancedHandbookHero />
+<GenericHero 
+  title="Team Handbook"
+  backgroundType='gradient'
+  height="sm"
+  description='Your guide to success with Team 201: The FEDS!'
+  backgroundValue='linear-gradient(to right,rgb(0, 55, 128), rgba(255, 0, 0, 0.62))'
+  textAlign='center'/>
 
 <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 20px' }}>
 
@@ -26,12 +32,23 @@ As a FIRST Robotics member, you have an incredible opportunity to gain knowledge
 
 The success of Team 201 in robotics and its numerous other activities is due to the dedication of our members (this includes our Students, Mentors, and Parents) acting as a TEAM. Your participation is essential to fulfilling our program's goals. Every member's commitment and responsibility keeps our team running smoothly. The possibilities are only limited by your engagement and enthusiasm. We encourage you to have an abundance of both!
 
-<InteractiveStatsWidget />
+<GenericStats
+  layout="grid"
+  variant="gradient"
+  countUp={true}
+  animation={{ enabled: true, duration: 2000, delay: 100 }}
+  stats={[
+    { value: 26, label: "Years of Excellence 🏆 — Over two decades of building bots and legacies.", suffix: "+" },
+    { value: 16, label: "Blue Banners 🚩 — When your closet runs out of space for victory.", suffix: "+" },
+    { value: 28, label: "Robots Built 🤖 — Each with more zip ties and caffeine than the last.", suffix: "+" },
+    { value: 1000, label: "Students Mentored 👥 — Mentoring tomorrow’s engineers, today.", suffix: "+" }
+  ]}
+/>
 
 ## Our Mission & Core Values
 
 <GenericGrid
-  layout="responsive"
+  layout="masonry"
   columns={{ xs: 1, sm: 2, md: 3 }}
   gap="24px"
   animation={{ enabled: true, stagger: 100 }}
@@ -148,6 +165,7 @@ Our team operates year-round. During summer and fall, we conduct training, outre
 
 Each year FRC unveils a new challenge at kickoff in January. High school students work with professional mentors to solve the engineering design problem and then join other teams in alliances to play the game at competition events where they are judged on design, innovation, and performance. Students learn teamwork, acquire technical skills, develop business acumen, and discover strengths they never knew they had. The program is a life-changing, career-molding experience and it's a lot of fun. Be competitive and play hard on the field, but it is much, much more than a game.
 
+
 <GenericTimeline
   orientation="vertical"
   variant="cards"
@@ -155,49 +173,49 @@ Each year FRC unveils a new challenge at kickoff in January. High school student
   animation={{ enabled: true, stagger: 200 }}
   items={[
     {
-      title: 'Team Formation',
-      date: '2001',
-      description: 'FEDS201 was established as one of the pioneering FRC teams in Michigan.',
-      icon: '🏁',
-      tags: ['Foundation', 'History']
+      title: 'Preseason Training & Outreach',
+      date: 'Summer - Fall',
+      description: 'Students participate in software/hardware training, host outreach events, run fundraisers, and bond through team-building activities.',
+      icon: '🛠️',
+      tags: ['Training', 'Outreach', 'Team Spirit']
     },
     {
-      title: 'First Regional Win',
-      date: '2005',
-      description: 'Won our first regional championship, establishing excellence as our standard.',
-      icon: '🏆',
-      tags: ['Achievement', 'Competition']
+      title: 'Kickoff & Game Reveal',
+      date: 'January',
+      description: 'FIRST unveils the new game challenge. The team begins brainstorming, strategizing, and planning how to conquer the year’s engineering puzzle.',
+      icon: '📣',
+      tags: ['Strategy', 'Kickoff']
     },
     {
-      title: 'Innovation Era',
-      date: '2010',
-      description: 'Began developing advanced scouting systems and data analytics platforms.',
-      icon: '💡',
-      tags: ['Innovation', 'Technology']
+      title: 'Build Season Begins',
+      date: 'January - February',
+      description: 'Six(ish) weeks of chaos, coding, CADing, and caffeine. Subteams bring the robot to life while working against the clock.',
+      icon: '⚙️',
+      tags: ['Engineering', 'Teamwork']
     },
     {
-      title: 'Digital Transformation',
-      date: '2020',
-      description: 'Launched comprehensive digital handbook and modern web infrastructure.',
-      icon: '🚀',
-      tags: ['Digital', 'Modern']
+      title: 'Competition Season',
+      date: 'Late February - April',
+      description: 'Team 201 competes in Michigan District Events, showing off strategy, innovation, and sportsmanship in fierce alliances.',
+      icon: '🏟️',
+      tags: ['Competition', 'Performance']
     },
     {
-      title: 'AI Integration',
-      date: '2024',
-      description: 'Implementing machine learning for predictive match analysis and strategy.',
-      icon: '🤖',
-      tags: ['AI', 'Future'],
-      link: { text: 'Learn More', href: '/Programming/Software' }
+      title: 'Beyond the Game',
+      date: 'Year-Round',
+      description: 'Students gain technical mastery, leadership, business experience, and lifelong memories. It’s more than just robots—it’s transformation.',
+      icon: '🌟',
+      tags: ['Growth', 'Leadership', 'Experience']
     }
   ]}
 />
+
 
 ## Team Structure & Sub-teams
 
 Every member needs their role. Every role contributes to team success.
 
-<TeamStructureGrid />
+{/* <TeamStructureGrid /> */}
 
 ### Detailed Sub-team Functions
 

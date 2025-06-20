@@ -68,10 +68,10 @@ export const GenericCard = ({
       borderRadius: '28px',
       shadow: isDark 
         ? '0 0px 50px -0px rgba(78, 76, 76, 0.9), 0 0 0 1px rgba(233, 15, 15, 0.1)'
-        : '0 25px 50px -12px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.05)',
+        : '0 25px 50px -12px rgba(0, 0, 0, 0.87), 0 0 0 1px rgba(0, 0, 0, 0.94)',
       background: isDark 
         ? 'linear-gradient(145deg,rgb(44, 88, 158) 0%,rgb(0, 76, 255) 100%)'
-        : 'linear-gradient(145deg, #ffffff 0%, #f8fafc 100%)'
+        : 'linear-gradient(145deg,rgb(0, 0, 0) 0%,rgb(5, 5, 5) 100%)'
     },
     minimal: {
       borderRadius: '16px',

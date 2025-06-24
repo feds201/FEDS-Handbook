@@ -1,0 +1,75 @@
+import {Callout} from 'nextra/components';
+import Head from 'next/head';
+
+<Head>
+    <title>Auto-Alignment - FEDS201</title>
+    <meta property="og:title" content="Elevator - FEDS201" key="title" />
+</Head>
+
+# Elevator
+From the very start of the season, we decided we would use a Cascading elevator to reach different levels of the reef and the barge. 
+## Elevator Specifications
+For the second half of this year, our elevator was belt-driven driven by a 2 kraken gearbox with a 5.7-1 ratio.
+ This allowed us to aggressively drive it both up and down, opposed to only being able to drive it agressively up earlier in the season because of a previously string-driven elevator.
+## Subsystem Code
+First off: We will see the following hardware in the elevator subsystem:
+- 2 krakens (leader and follower) that drive the elevator
+- 1 DIO Limit Switch that resets the position of the elevator
+### Constructor
+``` java
+public class Lift extends SubsystemABS {
+    private TalonFX elevatorMotorLeader; // Primary motor
+    private TalonFX elevatorMotorFollower; // Follower motor
+    private DoubleSupplier m_encoderValue;
+    public DoubleSupplier m_elevatorSpeed;
+    private BooleanSupplier elevatorAboveThreshold;
+    private DigitalInput limitSwitch;
+
+    // private final ShuffleboardTab tab = Shuffleboard.getTab("Elevator");
+    private final PIDController pid;
+    private final PIDController pidDown;
+
+    public Lift(Subsystems subsystem, String name) {
+        super(subsystem, name);
+        elevatorMotorLeader = new TalonFX(RobotMap.ElevatorMap.ELEVATOR_MOTOR);
+        elevatorMotorFollower = new TalonFX(RobotMap.ElevatorMap.ELEVATOR_MOTOR2);
+        limitSwitch = new DigitalInput(9);
+       
+        // Configure follower motor
+        elevatorMotorFollower.setControl(new Follower(elevatorMotorLeader.getDeviceID(), false));
+
+        // Configure current limits
+        elevatorMotorLeader.getConfigurator().apply(
+                RobotMap.CurrentLimiter.getCurrentLimitConfiguration(RobotMap.ElevatorMap.ELEVATOR_CURRENT_LIMIT));
+        elevatorMotorFollower.getConfigurator().apply(
+                RobotMap.CurrentLimiter.getCurrentLimitConfiguration(RobotMap.ElevatorMap.ELEVATOR_CURRENT_LIMIT));
+
+        m_encoderValue = () -> elevatorMotorLeader.getPosition().getValueAsDouble();
+        
+        elevatorAboveThreshold = ()-> getElevatorAboveThreshold();
+
+        pid = new PIDController(RobotMap.ElevatorMap.ELEVATOR_P, RobotMap.ElevatorMap.ELEVATOR_I, RobotMap.ElevatorMap.ELEVATOR_D);
+        pid.setTolerance(.2);
+
+        pidDown = new PIDController(0.4, 0, 0);
+        pidDown.setTolerance(.2);
+        pidDown.setSetpoint(1.3);
+
+        tab.add("Elevator PID", pid)
+            .withWidget(BuiltInWidgets.kPIDController);
+
+        tab.add("Elevator PID Down", pidDown)
+            .withWidget(BuiltInWidgets.kPIDController);
+
+        tab.addNumber("Elevator Position", m_encoderValue);
+
+        GenericEntry elevatorSpeedSetter = tab.add("Elevator Speed", 0.0)
+                .withWidget(BuiltInWidgets.kNumberSlider)
+                .withProperties(Map.of("min", 0, "max", .2))
+                .getEntry();
+        m_elevatorSpeed = () -> elevatorSpeedSetter.getDouble(0);
+
+        tab.addBoolean("elevator Threshold" , elevatorAboveThreshold);
+    }
+}
+```
